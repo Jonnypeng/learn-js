@@ -49,15 +49,18 @@
 		    	</li>
 			</ul>
 			<script>
-					document.getElementById('lis').onmouseover = show;
-					document.getElementById('lis').onmouseout = hide;
+					var lis = document.getElementById('lis')
+					var ull = document.getElementById('ull')  
+					var link = document.getElementById('link')  
+					lis.onmouseover = show;
+					lis.onmouseout = hide;
 					function show(){
-					document.getElementById('ull').style.display = 'block';
-					document.getElementById('link').style.color = 'yellow';
+					ull.style.display = 'block';
+					link.style.color = 'yellow';
 }
 					function hide(){
-					document.getElementById('ull').style.display = 'none';
-					document.getElementById('link').style.color = 'red';
+					ull.style.display = 'none';
+					link.style.color = 'red';
 }
 			</script>
 		</body>
