@@ -5,11 +5,30 @@
 			<link rel="stylesheet" href="css/style.css" type="text/css">
 			<title>quick-start</title>
 		<style>
-			ul{padding:0px;margin:0px;}
-			li{list-style:none;padding:0px;margin:0px;}
-			.lis{background:gray;list-style:none;padding:0px;margin:0px;width:80px;height:30px}
-			.lis a{display:block;line-height:30px;text-align:center;text-decoration:none;}
-			#ull{display:none;}
+			.large-ul{
+				margin:0px;
+				padding:0px;
+				width:80px;
+}
+			#lis{
+				background: blue none repeat scroll 0% 0%;
+				padding: 5px;
+}
+			#lis a{
+				color:#fff;
+				text-decoration:none;
+}
+			#ull{
+				margin:0px;
+				padding:0px;
+				display:none;
+}
+			li{
+				padding;0px;
+				margin:0px;
+				list-style:none;				
+				text-align:center;
+}
 		</style>
 		</head>
 		<body>
@@ -19,31 +38,26 @@
 			</script>
 				<button onclick="alert('Thank You')">clikme</button>
 			<hr / style="visibility:hidden;">
-			<ul style="text-align:center;">
+			<ul class="large-ul">
 					<li class="lis" id="lis">
 					<a href="#" id="link">wechat</a>
-		    	<ul id="ull" style="background:yellow;">
-					<li>msm</li>
-					<li>msn</li>
-					<li>msh</li>
+		    	  <ul id="ull">
+					   <li><a href="#">msm</a></li>
+					   <li><a href="#">msn</a></li>
+					   <li><a href="#">msh</a></li>
 					</ul>
 		    	</li>
 			</ul>
 			<script>
-					var document.getElementById('lis') = lis
-					var document.getElementById('ull') = ull
-					var document.getElementById('link') = link
-
-					lis.onmouseover = show;
-					lis.onmouseout=hide;
-
+					document.getElementById('lis').onmouseover = show;
+					document.getElementById('lis').onmouseout = hide;
 					function show(){
-				  ull.style.display='block';
-					link.style.background='blue';
+					document.getElementById('ull').style.display = 'block';
+					document.getElementById('link').style.color = 'yellow';
 }
 					function hide(){
-				  ull.style.display='none';
-					link.style.background='red';
+					document.getElementById('ull').style.display = 'none';
+					document.getElementById('link').style.color = 'red';
 }
 			</script>
 		</body>
