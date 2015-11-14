@@ -8,7 +8,7 @@
 			ul{padding:0px;margin:0px;}
 			li{list-style:none;padding:0px;margin:0px;}
 			.lis{background:gray;list-style:none;padding:0px;margin:0px;width:80px;height:30px}
-			.lis a{display:block;line-height:30px;text-align:center;text-decoration:none;color:#000;background-color:#f1f1f1;}
+			.lis a{display:block;line-height:30px;text-align:center;text-decoration:none;}
 			#ull{display:none;}
 		</style>
 		</head>
@@ -30,13 +30,20 @@
 		    	</li>
 			</ul>
 			<script>
-					document.getElementById('lis').onmouseover = show;
-					document.getElementById('lis').onmouseout=hide;
+					var document.getElementById('lis') = lis
+					var document.getElementById('ull') = ull
+					var document.getElementById('link') = link
+
+					lis.onmouseover = show;
+					lis.onmouseout=hide;
+
 					function show(){
-					document.getElementById('ull').style.display='block';
+				  ull.style.display='block';
+					link.style.background='blue';
 }
 					function hide(){
-					document.getElementById('ull').style.display='none';
+				  ull.style.display='none';
+					link.style.background='red';
 }
 			</script>
 		</body>
