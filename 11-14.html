@@ -29,7 +29,45 @@
 				list-style:none;				
 				text-align:center;
 }
+		#cblock {
+				background:red;
+				width:300px;
+				height:300px;
+				display:none;
+}
 		</style>
+		<script>
+			window.onload =	function (){
+				document.getElementById('load').onmouseover = change;
+				document.getElementById('load').onmouseout = small;
+				function change(){
+				document.getElementById('load').style.background ='red';
+				document.getElementById('load').style.color = '#fff';
+				document.getElementById('load').style.padding = '15px';
+				document.getElementById('load').style.width = '500px';
+}
+				function small(){
+				document.getElementById('load').style.background ='white';
+				document.getElementById('load').style.color = 'red';
+				document.getElementById('load').style.padding = '15px';
+				document.getElementById('load').style.width = '500px';
+}
+
+
+			var btn1 = document.getElementById('display');
+			var btn2 = document.getElementById('hidden');
+			var btn3 = document.getElementById('display-2')
+			btn1.onclick = display;
+			btn2.onclick = hidden;
+		  btn3.onclick = display;	
+			function display(){
+			document.getElementById('cblock').style.display = 'block';	
+}
+			function hidden(){
+			document.getElementById('cblock').style.display = 'none';	
+}
+}
+		</script>
 		</head>
 		<body>
 			<script>
@@ -48,6 +86,7 @@
 					</ul>
 		    	</li>
 			</ul>
+     <h2 id="load">加载完就可以执行</h2>
 			<script>
 					var lis = document.getElementById('lis')
 					var ull = document.getElementById('ull')  
@@ -63,6 +102,10 @@
 					link.style.color = 'red';
 }
 			</script>
+			<button id="display">显示</button>
+			<button id="hidden">隐藏</button>
+			<button id="display-2">我也要显示</button>
+			<div id="cblock"><div>
 		</body>
 	</html>
 
