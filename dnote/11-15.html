@@ -9,6 +9,7 @@
 								color:#fff;
 								background:red;
 								padding:5px 10px;
+							  cursor:pointer;
 }
 				#title {
 								font:16px bold;
@@ -20,6 +21,16 @@
 								height:100px;
 								border:black solid 2px; 
 }
+				#window{
+								width:2500px;
+								height:2500px;
+								background:rgba(0,0,0,0.34);
+								position:absolute;
+								top:0px;
+								left:0px;
+								display:none;
+								z-index:501;
+}
 				#ublock{
 								width:20%;
 								height:auto;
@@ -30,10 +41,10 @@
 								position:fixed;
 								left:35%;
 								right:35%;
-								top:30%;
+								top:10%;
 								line-height:4;
 								text-align:center;
-								display:none;
+								z-index:502;
 }
 			  #ublock button{
 								margin:0px 5px;
@@ -52,19 +63,22 @@
 		<body>
 		<div id="title">请为下面的DIV设置样式：<button id="btn1">点击查看</button></div>
 		<div id="cblock"></div>	
+		<div id="window">
 		<div id="ublock">
 			<div>请选择颜色：<button id="rbtn">红</button><button id="ybtn">黄</button><button id="bbtn">蓝</button></div>
 			<div id="cw">请选择宽度：<button id="w200">200px</button><button id="w300">300px</button><button id="w400">400px</button></div>
 			<div id="ch">请选择高度：<button id="h200">200px</button><button id="h300">300px</button><button id="h400">400px</button></div>
 			<div id="ro"><button id="rev">恢复</button><button id="ok">确定</button></div>
 		</div>
+		</div>
 		<script>
+				var cwindow = document.getElementById('window')
 				var ublock = document.getElementById('ublock')
 				var cblock = document.getElementById('cblock')
-
-				document.getElementById('btn1').onclick = showublock
-				function showublock (){
-															ublock.style.display = 'block';
+				
+				document.getElementById('btn1').onclick = showblock
+				function showblock (){
+															cwindow.style.display = 'block';
 }
 				document.getElementById('rbtn').onclick = showred
 				function showred(){
@@ -111,7 +125,7 @@
 }
 				document.getElementById('ok').onclick = hidden
 				function hidden(){
-													ublock.style.display = 'none';
+													cwindow.style.display = 'none';
 }
 		</script>	
 		</body>
