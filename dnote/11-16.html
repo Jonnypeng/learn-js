@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<meta charset="utf-8">
+			<title>quick-start</title>
+			<link rel="stylesheet" href="css/style.css" type="text/css">
+			<style>
+				
+			</style>
+		<script>
+				window.onload = function(){
+						var oBtn = document.getElementById('btn-1');
+						var oText = document.getElementById('text-1');
+						var oSelect = document.getElementById('select-1');
+	var oBtn2 = document.getElementById('btn-2');
+	var oText2 = document.getElementById('text-2');
+	var oSelect2 = document.getElementById('select-2');
+	var oImg = document.getElementById('img');
+			oBtn.onclick=function(){//alert (oBtn.value);
+															//alert (oText.value);
+															//alert (oSelect.value);
+											//alert('Taobao'+'in'+'Shanghai');
+						   //alert(oText.value+'in'+oSelect.value);
+							oBtn.value="按钮";
+							//oText.value="请在这里输入中文";
+							oText.value = oSelect.value;
+
+};
+			
+		oBtn2.onclick = function(){
+				oImg.src = oText2.value;
+				//oImg.width = oSelect2.Value;
+				
+};
+
+};
+		</script>		
+		</head>
+		<body>
+		<input id="text-1" type="text" value="">	
+		<select id="select-1">
+			<option value="Shanghai">Shanghai</option>
+			<option value="Beijing">Beijing</option>
+			<option value="Newyork">Newyork</option>
+		</select>
+		<input id="btn-1" type="button" value="button" />
+		<hr />
+		<input id="text-2" type="text" value="" />
+		<select id="select-2">
+			<option value="200">200px</option>
+			<option value="300">300px</option>
+			<option value="400">400px</option>
+			<option value="500">500px</option>
+		</select>
+		<input id="btn-2" type="button" value="button" />
+		<br />	
+		<hr />
+		<img id="img" src="http://img2.ph.126.net/zKxidRlm2Tj5jxS0lOkyEA==/6630933625281959777.jpg" width="100px" />		
+		
+
+
+
+
+
+
+
+		</body>
+	</html>
+
