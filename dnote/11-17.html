@@ -41,27 +41,38 @@
 					<div id="textarea">
 					</div>
 					<div id="usermodel">	
-					<span id="icon"><img src = "http://cdn-img.easyicon.net/png/11790/1179073.gif" width="10%"></span>
+					<span id="icon"><img id = "iconimg" src = "img/icon-1.gif" width="10%"></span>
 					<input id="text" type="text" value="请输入文字" />
 					<input id="btn" type="button" value="提交" />
 					</div>
 			</div>
 			<script>
-				var textarea = document.getElementById('textarea')	
-				var icon = document.getElementById('icon')	
-				var text = document.getElementById('text')	
-				var btn = document.getElementById('btn')	
-				
+				var textarea = document.getElementById('textarea');
+				var icon = document.getElementById('icon');
+				var text = document.getElementById('text');
+				var btn = document.getElementById('btn');
+				var iconimg = document.getElementById('iconimg');
+				var onoff = true;			
+
 				btn.onclick = function(){
 					if(text.value == ''){
 							alert('输入点吧');
 					}
 					else{
-					textarea.innerHTML += icon.innerHTML + ":" + text.value + "<br />"; 
+					textarea.innerHTML += icon.innerHTML + "&nbsp;&nbsp;:" + text.value + "<br />"; 
 					text.value = '';
 					}
 					};
-				
+				iconimg.onclick = function(){
+				if(onoff){
+						iconimg.src = "img/icon-2.gif";
+						onoff = false;	
+			}
+				else{
+						iconimg.src = "img/icon-1.gif";
+						onoff = true;
+}
+};
 
 
 			</script>
