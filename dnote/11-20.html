@@ -29,7 +29,7 @@
 		<body> 
 			<div id="slider">	
 				<div id="slider-img">
-					<img src="http://dag1688.cn-hangzhou.aliapp.com/wp-content/uploads/2015/10/metabo-%E4%BC%98%E6%83%A0%E5%A4%A7%E4%BF%83%E9%94%80.jpg" id="slider-img1" />
+					<img src="img/sImg-01.jpg" id="slider-img1" />
 				</div>	
 				<div id="pn">	
 					<img src="img/prev.png" id="prev">
@@ -44,23 +44,12 @@
 			var sliderText = document.getElementById('slider-text');
 			var prev  = document.getElementById('prev');
 			var next = document.getElementById('next');
-			var onoff = true;
-			//function 定义一个变量,再定义一个函数,变量.事件=函数,
+    	var arr = ['img/sImg-01.jpg','img/sImg-02.jpg','img/sImg-03.jpg']  
+			alert {'arr'};
 
-			function slider(){
-			if(onoff){
-					sliderImg.src = "http://dag1688.cn-hangzhou.aliapp.com/wp-content/uploads/2015/10/公牛情景全面解决方案.jpg";
-					onoff = false;
-			}
-			else{
-					sliderImg.src = "http://dag1688.cn-hangzhou.aliapp.com/wp-content/uploads/2015/10/metabo-优惠大促销.jpg";
-					onoff = true;
-			}	
-			};
+			//初始化
 			
 
-			prev.onclick = slider;
-			next.onclick = slider;
 
 					
 
