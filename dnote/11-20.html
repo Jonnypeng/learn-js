@@ -18,7 +18,7 @@
 					border-radius: 1em;
 				}
 				#slider-img{
-					height:296px;
+					height:auto;
 					bakcground:red;
 				}
 				#pn{
@@ -54,14 +54,31 @@
 			var num = 0;
 			var num4 = 4;
 			//初始化
-
-			next.onclick = function(){
+			function checkout(){
 			sliderImg.src = arrayUl[num];
      	sliderText.innerHTML = num+1  + "/" + arrayUl.length;
 			sliderCation.innerHTML = arrayTxt[num]; 
-			num ++;
+		};
+			checkout();
+			
+			prev.onclick = function(){
+				num --;
+				if(num==-1){
+					num = arrayUl.length - 1;
+				}
+				checkout();	
+			};
+
+			next.onclick = function(){
+				num ++;
+				if(num==3){
+					num = 0;
+				}
+				checkout();	
 			};
 			};
+
+			
 			</script>
 		</head>
 		<body> 
