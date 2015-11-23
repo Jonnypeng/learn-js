@@ -17,6 +17,10 @@
 					padding: 15px;
 					border-radius: 1em;
 				}
+				#slider-img{
+					height:296px;
+					bakcground:red;
+				}
 				#pn{
 				position: relative;
 				bottom: 190px;
@@ -48,14 +52,14 @@
     	var arrayUl = ['img/sImg-01.jpg','img/sImg-02.jpg','img/sImg-03.jpg'];  
 			var arrayTxt = ['公牛1:1全面解决方案','WD-40让金属返老还童','麦太保优惠大促销'];
 			var num = 0;
-			
+			var num4 = 4;
 			//初始化
+
+			next.onclick = function(){
 			sliderImg.src = arrayUl[num];
      	sliderText.innerHTML = num+1  + "/" + arrayUl.length;
 			sliderCation.innerHTML = arrayTxt[num]; 
-
-			next.onclick = function(){
-				num ++;
+			num ++;
 			};
 			};
 			</script>
