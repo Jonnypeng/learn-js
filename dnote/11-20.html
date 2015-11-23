@@ -37,7 +37,9 @@
 				};
 			</style>
 			<script>
-			window.onload = function(){
+			window.onload = slider 
+			
+			function slider(){
 			var sliderImg = document.getElementById('slider-img1');
 			var sliderCation = document.getElementById('slider-cation');
 			var sliderText = document.getElementById('slider-text');
@@ -52,9 +54,9 @@
      	sliderText.innerHTML = num+1  + "/" + arrayUl.length;
 			sliderCation.innerHTML = arrayTxt[num]; 
 
-			next.onclick = function(){
-				num ++;	
 			};
+			next.onclick = function(){
+				num ++;
 			};
 			</script>
 		</head>
@@ -64,7 +66,7 @@
 				
 				</div>
 				<div id="slider-img">
-					<img id="slider-img1" />
+					<img id="slider-img1"/> 
 				</div>	
 				<div id="pn">	
 					<a href="javascript:;" id="prev"><img src="img/prev.png" ></a>
