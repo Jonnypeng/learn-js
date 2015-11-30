@@ -6,25 +6,26 @@
 			<style>
 			</style>
 			<script>
-					window.onload = function(){
-						var body = document.getElementsByTagName('body');
-						var btn = document.getElementsByClassName('list');
-						body[0].innerHTML = "btn" +  btn[btn.length-1].innerHTML 
-						//btn.length-1.innerHTML
-
+				window.onload = function(){
+					var body = document.getElementsByTagName('body')[0];
+					var num = 0;
+					for(;num < btn.length;){
+					num++;
+					}
+					var btn = document.getElementsByTagName('button')[num];
+					var array = ["星期一","星期二","星期三","星期四","星期五"];
+					btn[num].onclick = function(){
+						alert()
+					};
 					};
 			</script>
 		</head>
 		<body>
-				<ul id="list">
-				        <li class="list">button</li>
-				        <li class="list">button</li>
-				        <li class="list">button</li>
-				        <li class="list">button</li>
-				        <li class="list">button</li>
-				        <li class="list">button</li>
-				</ul>
-		
+			<button>btn</button>
+			<button>btn</button>
+			<button>btn</button>
+			<button>btn</button>
+			<button>btn</button>		
 		</body>
 		
 	</html>
