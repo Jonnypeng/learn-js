@@ -9,15 +9,31 @@
 				window.onload = function(){
 					var body = document.getElementsByTagName('body')[0];
 					var num = 0;
-					for(;num < btn.length;){
-					num++;
+					var btn = document.getElementsByTagName('button');
+					var array = ['one','two','three','four','five']
+//					btn[0].onclick = function(){
+	//					alert(array[0])
+	//				};
+	//				btn[1].onclick = function(){
+	//					alert(array[1])
+	//				};
+	//				btn[2].onclick = function(){
+	//					alert(array[2])
+	//				};
+	//				btn[3].onclick = function(){
+	//					alert(array[3])
+	//				};
+	//				btn[4].onclick = function(){
+	//					alert(array[4])
+//					};
+					for(var num = 0;num<btn.length;num++){
+						btn[num].onclick = function(){
+						alert(num)
+					};
 					}
-					var btn = document.getElementsByTagName('button')[num];
-					var array = ["星期一","星期二","星期三","星期四","星期五"];
-					btn[num].onclick = function(){
-						alert()
-					};
-					};
+					
+
+};
 			</script>
 		</head>
 		<body>
