@@ -8,9 +8,8 @@
 			<script>
 				window.onload = function(){
 					var body = document.getElementsByTagName('body')[0];
-					var num = 0;
 					var btn = document.getElementsByTagName('button');
-					var array = ['one','two','three','four','five']
+					var array = ['one','two','three','four','five'];
 //					btn[0].onclick = function(){
 	//					alert(array[0])
 	//				};
@@ -28,7 +27,7 @@
 //					};
 					for(var num = 0;num<btn.length;num++){
 						btn[num].onclick = function(){
-						alert(num)
+						alert(array[3])
 					};
 					}
 					
@@ -37,11 +36,11 @@
 			</script>
 		</head>
 		<body>
-			<button>btn</button>
-			<button>btn</button>
-			<button>btn</button>
-			<button>btn</button>
-			<button>btn</button>		
+			<button>one</button>
+			<button>two</button>
+			<button>three</button>
+			<button>four</button>
+			<button>five</button>		
 		</body>
 		
 	</html>
