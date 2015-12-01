@@ -25,13 +25,15 @@
 	//				btn[4].onclick = function(){
 	//					alert(array[4])
 //					};
-					for(var num = 0;num<btn.length;num++){
-						btn[num].onclick = function(){
-						alert(array[3])
-					};
-					}
-					
-
+//					for(var num = 0;num<btn.length;num++){
+//						btn[num].onclick = function(){
+//						alert(array[3])
+//					};
+//					}
+				func = function(text) { return function() { alert(text) } };
+			for(var num = 0; num < btn.length; num++) {
+    		btn[num].onclick = func(array[num]);
+				}			
 };
 			</script>
 		</head>
