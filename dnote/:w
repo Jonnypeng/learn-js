@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<meta charset="utf-8">
+			<title>quick-start</title>
+			<style>
+			</style>
+			<script>
+				window.onload = function(){
+					var body = document.getElementsByTagName('body')[0];
+					var btn = document.getElementsByTagName('button');
+					var array = ['one','two','three','four','five'];
+//					btn[0].onclick = function(){
+	//					alert(array[0])
+	//				};
+	//				btn[1].onclick = function(){
+	//					alert(array[1])
+	//				};
+	//				btn[2].onclick = function(){
+	//					alert(array[2])
+	//				};
+	//				btn[3].onclick = function(){
+	//					alert(array[3])
+	//				};
+	//				btn[4].onclick = function(){
+	//					alert(array[4])
+//					};
+//					for(var num = 0;num<btn.length;num++){
+//						btn[num].onclick = function(){
+//						alert(array[3])
+//					};
+//					}
+//				func = function(text) { return function() { alert(text) } };
+//				for(var num = 0; num < btn.length; num++) {
+//    		btn[num].onclick = func(array[num]);
+//				}			
+				for(var num = 0;num<btn.length;num++) {
+    		let n = num; //let关键字生成的变量只会在当前{}代码块中,不会产生变量提升现象
+    		btn[num].onclick = function (e) {
+       	console.log(n);
+       	console.log(array[n])
+    }
+}
+};
+			</script>
+		</head>
+		<body>
+			<button>one</button>
+			<button>two</button>
+			<button>three</button>
+			<button>four</button>
+			<button>five</button>		
+		</body>
+		
+	</html>
+
