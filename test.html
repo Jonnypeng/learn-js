@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title></title>
+</head>
+<body>
+			 <button onclick="debug()">debug</button>
+       <script>
+			 		function debug(){
+							var log = document.getElementById('debuglog');
+							if(!log){
+									log = document.createElement('div');
+									log.id = "debuglog";
+									log.innerHTML = "<h1>Debug Log</h1>";
+									document.body.appendchild(log);
+							}
+							var pre = document.createElement('pre');
+							var text = document.createElement('text');
+							pre.appendchild('text');
+							log.appendchild('pre');
+					};
+			 </script>  
+			 <>
+</body>
+</html>:wq
