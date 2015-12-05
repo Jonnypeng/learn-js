@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title></title>
+</head>
+<body>
+	<script>
+			//“+”可以作为操作符，也可以作为拼接符，其结果具有极大的不同
+			var ps = 2014;
+			var xbox = 2015;
+			var game = 2014 + 2015;
+			var d_game = 2014 + "2015" ;
+			alert (game);
+			alert	(d_game);
+			//“+=” 快捷符号可以一次性完成“加法与赋值”（或拼接与赋值）操作
+			alert(xbox+="years");	
+			alert(ps+=13);
+
+
+			//以下是条件语句的使用
+			var dg_satr = 5;
+			var emi_star = 4;
+			var end = "This is good!";
+			if(dg_satr > 10 ){
+				alert(end);
+			}
+				else{
+					alert("This is bad");
+				}
+
+			//以下是比较操作符号的使用
+			var num = 1;
+			var nu = 2;
+			var n = 1;
+			var f = false;
+			var nll = "";
+			if(num < 2){alert("This is true")};
+			if(num > nu){
+					alert("This is true");
+					}
+					else{
+						alert("This is false");
+					}
+			if(num==n){
+				alert("num 与 n 是相等的");
+			}
+			else{
+					alert("比较结果是错误的");
+			}
+			//以下的比较结果是不严格相等的比较
+			if(f == nll){
+				alert("难道空值与false是相等的吗?");
+			}
+			//如果我们采用完全相等比较符
+			if(f === null){
+				alert("难道空值与false是相等的吗?");
+			}
+			else{
+				alert("您看到的这则信息表示f与null并不是严格相等,在使用===的时候,不仅会比较值,而且会比较变量的类型"); 
+			}
+			//如果是大于等于或小于等于的情况,会如何发生
+			if(num <= 2){
+					alert("num是小于等于2的");
+			}
+			if(nu >= num){
+					alert("nu是大于等于num的");
+			}
+			//如果是不等于!=
+			if(nu != num){
+					alert("nu是不等于num的");
+			}
+			
+			//逻辑与操作符是由"&&"构成的
+			var a = 1;
+			var b = 2;
+			var c = 3;
+			var d ="";
+			if(a<b&&a<c){
+				alert("a的确小于b,同时也小于c");
+			}
+			if(a<b&&b>c){
+				alert("a的确是小于b,b也下于c");
+			}
+			else{
+				alert("a的确小于b,但是b并不大于a");
+			}
+			
+			//逻辑或操作符是由"||"构成的
+			if(a<b||a>c){
+				alert("你说对了,a小于b,但是a并不大于c,这里返回的是true ");
+			}
+			if(a>b||a>c){
+				alert("这里不管说什么,你都看不见")
+			}
+			else{
+				alert("你在这里看到是内容返回的值是false,因为a不大于b,而且a也不大于c")
+			}
+			
+
+			//逻辑非操作符是"!"
+			if(!(a<b)){
+					alert("我知道你说对了,但是我也不执行,因为我喜欢的false");
+			}
+			else{
+				alert("a当然是小于b了,但是逻辑非将本应该返回的true,变成了false,结果本来是在if后面执行的,却在else里面执行了");
+			}
+			if(!(a>b)){
+				alert("为了在true中执行,我不惜说谎,通过这个颠倒是非的逻辑非,在这里返回true,其实我的真实想法是,a是小于b的,呵呵");
+			}
+			if(!(a<b||a>c)){
+				alert("说什么也没有用");
+			}
+			else{
+				alert("这个颠倒黑白的世界简直让我抓狂,我知道a是小于b的,我也知道a并不大于c,但是我采用的是或,问题在于我说的是对的,那么在逻辑非的世界里,就是错的,你看到的内容是一个返回false的值");
+			}
+	</script>         
+</body>
+</html>		
+
+
+	</script>         
+</body>
+</html>		
