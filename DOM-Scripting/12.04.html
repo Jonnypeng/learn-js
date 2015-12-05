@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title>对象与数组的建立</title>
+</head>
+<body>
+       <script>
+			 			//var mood = "happy";
+						//var age = 33;
+						//var mood = "happy", age = 33;
+						var mood,age;
+						mood = "Jonn";
+						age = 33;
+						// 以下变量声明使用了转义符,将"变为字符串中的一个字符,而不是声明结束符号;
+						answer = "\"What old  you\"";
+						alert(mood);
+						alert(answer);
+						alert(age);
+
+						//var beatles = Array(4);
+						//beatles [0] = "Jonn";
+						//beatles [1] = "Paul";
+						//beatles [2] = "George";
+						//beatles [3] = "Ringo";
+						//var beatles = Array ("Jonn","Paul","George","Ringo");
+						var beatles = ["Jonn","Paul","George","Ringo"];
+						var names = ["Ringo","Jonn","George","Paul"]
+						var years = [1940,1941,1942,1943];
+						var lennon = ["Jonn",1940,false]
+						var name = "Jonn";
+						beatles [0] = name;
+						beatles [1] = names [3];
+						alert(beatles[2]);
+
+
+						//将一个数组作为另一个数组的元素
+						var classical = ["DG","EMI","DECCA","SONY","RCA","PHILIPS"];
+						var music = [];
+						music[0] = classical;
+						music[1] = beatles;
+						alert(music[0]);
+						alert(music[0][1]);
+						alert(music[1][1]);
+
+						//以下是关联数组的写法
+						var car = Array();
+						car["toyota"] = "vois"; 
+						car["honda"] = 1;
+						car["ford"] = false;
+						alert(car["toyota"]);
+						alert(car["honda"]);
+						alert(car["ford"]);
+
+						//对象的方式进行编写
+						//var game = Object();
+						//var game = ();
+						//game.years = 2014;
+						//game.name = "farcay";
+						//game.campany = "ubisoft";
+						//game.sale = false;
+						var game = {years:2014,name:"farcay",campany:"ubisoft",sale:false};
+						alert(game.years);
+
+						//将上面的对象置入数组中
+						var xbox_360 = Array();
+						xbox_360[0] = game;
+						alert(xbox_360[0].name);
+
+						//将数组置入到对象中
+						var japan = {};
+						japan.car = car;
+						alert(
+							japan.car.toyota
+						);
+			 </script>  
+</body>
+</html>
