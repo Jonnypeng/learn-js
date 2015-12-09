@@ -30,10 +30,17 @@
 //						alert(array[3])
 //					};
 //					}
-				func = function(text) { return function() { alert(text) } };
-			for(var num = 0; num < btn.length; num++) {
-    		btn[num].onclick = func(array[num]);
-				}			
+//				func = function(text) { return function() { alert(text) } };
+//				for(var num = 0; num < btn.length; num++) {
+//    		btn[num].onclick = func(array[num]);
+//				}			
+				for(var num = 0;num<btn.length;num++) {
+    		let n = num; //let关键字生成的变量只会在当前{}代码块中,不会产生变量提升现象
+    		btn[num].onclick = function (e) {
+       	console.log(n);
+       	console.log(array[n])
+    }
+}
 };
 			</script>
 		</head>
