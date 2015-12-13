@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title></title>
+</head>
+<body>
+      <script>
+					//循环语句While的使用
+					var drink = 10;
+					while(drink >= 1){
+						alert("还有" + drink + "瓶可乐");
+						drink--;
+					}
+					if(drink < 1){
+						alert("对不起,我们的可乐卖光了");
+					}
+
+					//do...while循环语句的使用,当循环条件的返回求值结果为false,花括号的语句也至少被执行一次
+					var phone = 10;
+					do{
+						alert("抢购进行中" + "还有" + phone +"台	IPHONE");
+					}while(phone >11);
+					
+					//使用for语句进行循环,优点在于可以将变量\条件\增量进行提前说明,花括号内专注于动作的执行
+					var music = Array("EMI","Playdor","SONY","RCA","BMG");
+					for(var num = 0;num < music.length;num++){
+							alert(music[num]);
+					}
+
+					//函数
+					function multiply(num1,num2){
+						var total = num1*num2;
+						alert(total);
+					}
+					multiply(10,2);
+					multiply(10,3);
+
+					multiply(num1,num2);
+					multiply(10,3);
+
+
+
+			</script>	 
+</body>
+</html>
