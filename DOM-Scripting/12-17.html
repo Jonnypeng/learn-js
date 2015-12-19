@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title></title>
+</head>
+<body>
+<div id="purchases">
+        <ul class="music">
+                <li>eml</li>
+                <li>dg</li>
+                <li>bmg</li>
+        </ul>
+</div>
+<div class="important"></div>
+<div class="sale"></div>
+<div class="important sale"></div>
+<div class="important sale more"></div>
+
+<p title="attaibute"></p>
+<p title="attaibute1"></p>
+<p></p>
+
+<div id="st" ></div>
+<div id="at" title="on"></div>
+<script>
+	//使用通配符"*"对文档内的元素进行捕捉
+	var shopping = document.getElementById("purchases");
+	var items = shopping.getElementsByTagName("*");
+	alert(items.length);
+	//检验目标的类型
+	for(var i = 0;i < items.length;i++){
+		alert(typeof items[i]);
+	}	
+	//多类匹配
+	var is = document.getElementsByClassName("important sale");		
+	alert(is.length);
+
+
+	//getAttribute,获取元素的属性，语法不能通过document进行调用，只能通过object进行调用	
+	var p = document.getElementsByTagName("p")
+	for(var i = 0;i < p.length;i++){
+		//alert(p[i].getAttribute("title"));
+		p[i].setAttribute("title","yes");
+		var p_title =p[i].getAttribute("title");
+		//if(something)与if(something != null),是等价的，明显前者更为简明
+		if(p_title){
+			alert(p_title);
+		}
+	}
+	//在下面的案例中，title本来是不存在的，但是我们通过setAttribute进行属性设置，实际上完成了两个动作，首先创建title属性，然后再设置属性值
+	var st = document.getElementById("st");
+	//st.getAttribute("title");
+	st.setAttribute("title","setAttribute");
+	alert(st.getAttribute("title"));
+
+	var at = document.getElementById("at");
+	at.setAttribute("title","off");
+	alert(at.getAttribute("title"));
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
