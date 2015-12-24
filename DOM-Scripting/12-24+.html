@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title></title>
+<script>
+	window.onload = function(){
+	var oBtn = document.getElementById("btn1");
+	var oUl = document.getElementById("list");
+	var arr =[
+	 "21世纪传媒原总裁沈颢获刑4年 处罚金6万元",
+	 "北京市环保监测中心：24日空气质量较好",
+	 "宝能控制人首次回应\"万宝之争\":尊敬王石",
+	 "刘源拍案查办谷俊山 扳倒徐郭有大功(图)",
+	 "媒体:港澳特首进京述职 座次变化藏玄机(图)"
+	 ];
+	var onOff = true;
+
+	oBtn.onclick = function(){
+		if(onOff){
+		//oBtn.disabled = true;
+		//oBtn.style.display = "none";
+		//	oUl.innerHTML = "";
+		for(var i=0;i<arr.length;i++){
+			//为什么不是"=",因为"="意味后面替代前面,是一种覆盖关系
+			oUl.innerHTML += "<li>" + arr[i]	+ "</li>";
+		}
+		}
+		onOff = false;
+	};
+
+	 };
+</script>
+</head>
+<body>
+     <input id="btn1" type="button" value="自动生成5条新闻">
+	<ul id="list"></ul>
+</body>
+</html>
