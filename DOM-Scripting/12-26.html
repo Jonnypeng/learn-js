@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title>图标上浮提示框</title>
+				<link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+<style>
+i{vertical-align:middle;color:green;}
+.dn {padding-left: 15px; display:none;}
+.dn img {width:3em;vertical-align:middle;}
+li{margin:30px 0px;padding-left:0px;list-style:none;}
+</style>
+</head>
+<body>
+  <ul>
+          <li><i id="wechat" class="fa fa-wechat fa-3x"></i><span class="dn"><img id="qrcode" src="http://www.sparkplugdigital.com/wp-content/uploads/2011/04/qr_code.jpg"></span></li>
+          <li><i class="fa fa-qq fa-3x"></i><span class="dn">进入QQ，与我对话吧！</span></li>
+          <li><i class="fa fa-phone fa-3x"></i><span class="dn">拨打我的电话</span></li>
+  </ul>	    	
+	<script>
+	var icon = document.getElementsByTagName("li");
+	var dn =	document.getElementsByClassName("dn"); 
+	for(var i=0;i<icon.length;i++){
+		icon[i].onmouseover = function(){
+			num = i;
+			this.style.color = "red";
+			this.getElementsByClassName("dn")[0].style.display="inline-block";
+		}
+		icon[i].onmouseout = function(){
+			num = i;
+			this.style.color = "green";
+			this.getElementsByClassName("dn")[0].style.display="none";
+		}
+	} 
+
+
+	</script>
+</body>
+</html>
