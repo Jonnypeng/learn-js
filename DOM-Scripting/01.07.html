@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title>自定义属性</title>
+</head>
+<body>
+	<input type="button" value="按钮1">
+	<input type="button" value="按钮2">
+	<input type="button" value="按钮3">
+	<input type="button" value="按钮4">
+	<input type="button" value="按钮5">
+	<input type="button" value="按钮6">
+	<input type="button" value="按钮7">
+
+	<script>
+		var btn = document.getElementsByTagName("input");
+
+		for(var i=0;i<btn.length;i++){
+			btn[i].onOff = true;
+			btn[i].onclick = function(){
+					if(this.onOff){
+							this.style.backgroundColor = 'red';
+							this.style.color = 'white';
+							this.onOff = false;
+					}else{
+							this.style.backgroundColor = 'white';
+							this.style.color = 'red';
+							this.onOff = true;
+					}	
+					}	
+				}
+					
+	</script>
+</body>
+</html>
