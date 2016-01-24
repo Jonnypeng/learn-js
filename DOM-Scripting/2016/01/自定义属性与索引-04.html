@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title></title>
+			<style>
+				body{background-color:black;}
+				.pic{margin:15px auto;width:400px;}
+				.pic img{width:100%;}
+				.text {color: white;
+				text-align: center;
+				font-size: 1.5em;
+				margin: 5px;}
+				.title{
+				color: white;
+				text-align: center;
+				font-size: 1em;
+				position: relative;
+				bottom: 510px;
+				}
+				.btn{
+				margin: 0px;
+				padding: 0px;
+				position: relative;
+				bottom: 555px;
+				left: 420px;
+				}
+				.btn li {
+				width: 100px;
+				height: 100px;
+				list-style: outside none none;
+				color: #eee;
+				text-align: center;
+				font-size: 1.5em;
+				line-height: 100px;
+				background-color: #1E1E1E;
+				border: 1px solid;}
+				li.active{background-color:yellow;color:black;border: 1px solid white;}
+				li:hover{cursor:pointer;}
+			</style>			
+</head>
+<body>
+<div class="pic">
+        <div class="text"></div>
+				<div class="img">
+        <img alt="">
+				</div>
+        <ul class="btn">
+                <li>A</li>
+                <li>B</li>
+                <li>C</li>
+                <li>D</li>
+                <li>E</li>
+        </ul>
+        <div class="title"></div>
+</div>
+<script>
+	var img = document.getElementsByTagName("img")[0];
+	var aUl = document.getElementsByClassName("btn")[0];
+	var aLi = aUl.getElementsByTagName("li");
+	var text = document.getElementsByClassName("text")[0];
+	var title = document.getElementsByClassName("title")[0];
+	var active = document.getElementsByClassName("active");
+	var num = 0;
+	var arrTitle = ["封面","春之初","夏之热","秋之实","冬之静"];
+	var imgList = [
+	"../images/saaya-irie-01.jpg",
+	"../images/saaya-irie-02.jpg",
+	"../images/saaya-irie-03.jpg",
+	"../images/saaya-irie-04.jpg",
+	"../images/saaya-irie-05.jpg"];
+
+	//初始化
+	img.src = "../images/saaya-irie-01.jpg";
+	title.innerHTML = arrTitle[0];
+	text.innerHTML = 1 + num + "/" + aLi.length;
+	aLi[num].className = "active";
+
+	for(var i=0;i<aLi.length;i++){
+		aLi[i].index = i;
+		aLi[i].onclick = function(){
+			active[0].className = "";
+			this.setAttribute("class","active");
+			img.src = imgList[this.index];
+			text.innerHTML = 1 + this.index + "/" + aLi.length;
+			title.innerHTML = arrTitle[this.index];
+		}
+	}
+</script>
+</body>
+</html>
