@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title></title>
+
+</head>
+<body>
+       <input type="button" value="btn">
+       <input type="button" value="btn">
+       <input type="button" value="btn">
+			 <p></p>
+			 <p></p>
+			 <p></p>
+
+			 <script>
+			 	var btn = document.getElementsByTagName("input");			
+				var post = document.getElementsByTagName("p");
+				arr = ["张三","李四","王二"];
+				for(var i =0;i<btn.length;i++){
+					//采用将按钮数组序列重建在属性中的方法,可以建立索引,从而在动作函数中进行引用
+					btn[i].index = i;
+					btn[i].onclick = function(){
+						//在for循环语句中,不能在其之下的动作函数中沿用i;而是需要建立索引
+						//alert(this.index);
+						this.value = arr[this.index];
+						post[this.index].innerHTML = arr[this.index];
+					}
+				}
+			 </script>
+</body>
+</html>
