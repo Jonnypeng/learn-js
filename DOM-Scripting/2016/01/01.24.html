@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title></title>
+<script>
+	window.onload = function(){
+		var btn = document.getElementsByTagName("input");
+		arr = ["A","B","C","D"]
+		for(var i = 0;i<btn.length;i++){
+			btn[i].num = -1;
+			btn[i].onclick = function(){
+				this.num+=1;
+					if(this.num==arr.length){
+						this.num=0;
+					}
+				alert(arr[this.num]);
+			}
+		}
+	}
+</script>
+</head>
+<body>
+       <input type="button" value="0">
+       <input type="button" value="0">
+       <input type="button" value="0">
+</body>
+</html>
