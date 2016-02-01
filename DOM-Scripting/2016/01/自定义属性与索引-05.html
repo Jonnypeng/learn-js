@@ -30,6 +30,12 @@
 	#haoyou-list,#tongshi-list,#heimingdan-list{
 	padding:15px 0px;
 	}
+	.list{
+		display:none;
+	}
+	.active{
+		background-color:blue;
+	}
 
 </style>					
 </head>
@@ -37,7 +43,7 @@
 	<ul	id="main">
 	     <li id="haoyou">
 			 	<div id="haoyou-title" class="title">好友</div>
-			 	<ul id="haoyou-list" class="list">
+			 	<ul id="haoyou-list" class="list liston">
 			 	        <li>张三</li>
 			 	        <li>李四</li>
 			 	        <li>王二</li>
@@ -68,6 +74,21 @@
 	</ul>
 
 	<script>
+		var btn = document.getElementsByClassName("title");	
+		var list = document.getElementsByClassName("list");
+		var active = document.getElementsByClassName("active");
+		var onOff = true;
+
+		for(var i=0;i<btn.length;i++){
+			btn[i].index = i;
+			btn[i].onclick = function(){
+					//this.className="active";
+					for(var j=0;j<list.length;j++){
+					list[j].style.display = "none";
+					}	
+				list[this.index].style.display = "block";
+				}
+			}
 	</script>
 </body>
 </html>
