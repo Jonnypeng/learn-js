@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title></title>
+</head>
+<body>
+	<ol>
+	        <li id="a">找到arr里面的所有数字</li>
+	        <li id="b">找到可以转成数字的内容</li>
+	        <li id="c">转成数字以后判断最大值</li>
+	        <li id="d">把NaN所在的位置找出来</li>
+	</ol>		
+       <script>
+			 	var arr = [
+				'100px',
+				'abc'-6,
+				[],
+				-9876,
+				34,
+				-2,
+				"300",
+				function(){alert(1);},
+				null,
+				document,
+				[],
+				true,
+				'200px'-30,
+				'23.45元',
+				5,
+				Number('abc'),
+				function(){alert(3);}
+				];
+
+
+				var a = document.getElementById("a");
+				var b = document.getElementById("b");
+				var c = document.getElementById("c");
+				var d = document.getElementById("d");
+				var newArr = [];
+				var max = 0;
+
+
+				for(var i =0;i<arr.length;i++){
+					var aN = Number(arr[i]);
+					if(arr[i]===aN){
+						a.innerHTML += arr[i];
+					}
+					if(aN){
+						b.innerHTML += arr[i];
+						newArr.push(aN);
+							}
+					if(isNaN(arr[i])&&!aN){
+						d.innerHTML += "&nbsp" + i +"&nbsp";
+					}
+				}
+					alert(Number(arr[15]));
+
+				for(var j=0;j<newArr.length;j++){
+					if(newArr[j]>max){
+						max = newArr[j];
+					}
+				}
+					c.innerHTML += max;
+
+
+			 </script>	 
+</body>
+</html>
