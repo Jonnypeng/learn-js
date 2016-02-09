@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title></title>
+				<style>
+					li{list-style:none;margin:10px 0px;}
+					ul+p {padding-left:40px;}
+				</style>
+</head>
+<body>
+       <ul id="list">
+            <li>
+							<input type="button" value="-">
+								<strong></strong>
+							<input type="button" value="+">
+								单价:<em></em>&nbsp;元	小计:<span></span>&nbsp;元 
+						</li>
+            <li>
+							<input type="button" value="-">
+								<strong></strong>
+							<input type="button" value="+">
+								单价:<em></em>&nbsp;元	小计:<span></span>&nbsp;元 
+						</li>
+            <li>
+							<input type="button" value="-">
+								<strong></strong>
+							<input type="button" value="+">
+								单价:<em></em>&nbsp;元	小计:<span></span>&nbsp;元 
+						</li>
+            <li>
+							<input type="button" value="-">
+								<strong></strong>
+							<input type="button" value="+">
+								单价:<em></em>&nbsp;元	小计:<span></span>&nbsp;元 
+						</li>
+            <li>
+							<input type="button" value="-">
+								<strong></strong>
+							<input type="button" value="+">
+								单价:<em></em>&nbsp;元	小计:<span></span>&nbsp;元 
+						</li>
+       </ul>
+
+			<p id="heji">商品合计共:<strong></strong>件,共花费了:<strong>元</strong><br />其中那个最贵的商品单价是:<strong></strong>元</p>
+
+<script>
+	var ul = document.getElementById("list");
+	var li = ul.getElementsByTagName("li");
+	var priceArr = [12.5,10.5,8.5,8.5,14.5];
+	var post = document.getElementById("heji");
+	var total = post.getElementsByTagName("strong")[0]; //合计数量
+	var totalPrice = post.getElementsByTagName("strong")[1]; //合计价格
+	var expensive = post.getElementsByTagName("strong")[2]; //最贵价格
+
+
+
+
+	for(var i=0;i<li.length;i++){
+		fn(li[i],priceArr[i]);
+	}
+		sum(li);
+	function fn(list,priceDate){
+		var down = list.getElementsByTagName("input")[0]; //数量减少
+		var up = list.getElementsByTagName("input")[1]; //数量增加
+		var numberDate = list.getElementsByTagName("strong")[0];
+		var numDate = 0; //商品数量
+		var price = list.getElementsByTagName("em")[0];//单价所在元素
+		var smallCounter = list.getElementsByTagName("span")[0];
+		var numSmallCounter = 0;//价格小计
+		var expensiveDate = 0; //最贵价格
+
+		/*初始化*/
+		price.innerHTML = priceDate; //单价赋值
+
+		function inputDate (){
+		numberDate.innerHTML = numDate; //数量填充
+		numSmallCounter = numDate*priceDate; //小计赋值
+		smallCounter.innerHTML = numSmallCounter; //小计填充
+		};
+
+		/*数量增加动作*/
+		up.onclick = function(){
+			numDate++;
+			total.innerHTML++;
+			inputDate();
+
+		}
+
+		/*数量减少动作*/
+		down.onclick = function(){
+			if(numDate>0){  //当数量大于0,才执行此动作
+			numDate--;
+			total.innerHTML--;
+			}
+			inputDate();
+		}
+
+
+	}
+	
+</script>
+       	 
+</body>
+</html>
