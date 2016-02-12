@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title></title>
+				<link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+				<style>
+					#container{
+						background:#eee;
+						margin:30px auto;
+						width: 260px;	
+						border:1px solid #eee;
+					}
+					#content {
+						background:white;
+					}
+					ol{
+						padding:15px;
+						margin:0px;
+					}
+					#hot,#score,#comment
+					{
+						display:none;
+					}
+					ol li{
+						margin:10px 0px;
+						list-style-position:inside;
+					}
+
+					strong{
+						display:inline-block;
+						padding:10px;
+					}
+
+					.active{
+						background:white;
+					}
+					strong:hover{
+						cursor:pointer;
+					}
+					#content li:hover{
+						color:green;
+						cursor:pointer;
+						font-size:1.4em;
+					}
+				</style>
+</head>
+<body>
+	<div id="container">
+				<strong>一周最热</strong>	
+				<strong>最高评分</strong>	
+				<strong>最多评论</strong>	
+					<ol id="content"></ol>
+	        <ol id="hot">
+	                <li>
+										<i class="fa fa-youtube">Youtube</i>
+									</li>
+	                <li>
+										<i class="fa fa-apple">Apple</i>
+									</li>
+	                <li>
+										<i class="fa fa-linux">Linux</i>
+									</li>
+	                <li>
+										<i class="fa fa-wechat">Wechat</i>
+									</li>
+	                <li>
+										<i class="fa fa-git">git</i>
+									</li>
+	        </ol>
+	        <ol id="score">
+	                <li>
+										<i class="fa fa-linux">Linux</i>
+									</li>
+	                <li>
+										<i class="fa fa-wechat">Wechat</i>
+									</li>
+	                <li>
+										<i class="fa fa-git">git</i>
+									</li>
+	                <li>
+										<i class="fa fa-youtube">Youtube</i>
+									</li>
+	                <li>
+										<i class="fa fa-apple">Apple</i>
+									</li>
+	        </ol>
+	        <ol id="comment">
+	                <li>
+										<i class="fa fa-linux">Linux</i>
+									</li>
+	                <li>
+										<i class="fa fa-youtube">Youtube</i>
+									</li>
+	                <li>
+										<i class="fa fa-apple">Apple</i>
+									</li>
+	                <li>
+										<i class="fa fa-wechat">Wechat</i>
+									</li>
+	                <li>
+										<i class="fa fa-git">git</i>
+									</li>
+	        </ol>
+	</div>			        
+		<script>
+			var container = document.getElementById("container"); //容器
+			var content = document.getElementById("content"); //内容
+			var liContent = content.getElementsByTagName("li"); //内容模块的列表
+			var hot = document.getElementById("hot"); //最热
+			var score = document.getElementById("score"); //最多评分
+			var comment = document.getElementById("comment"); //最多评论
+
+			var contentArr = [hot.innerHTML,score.innerHTML,comment.innerHTML]
+
+			var btn = container.getElementsByTagName("strong"); //按钮
+
+			/*初始化*/
+					btn[0].style.background = "#fff";
+					content.innerHTML = contentArr[0];
+
+			for(var i=0;i<btn.length;i++){
+				btn[i].index = i;
+				btn[i].onclick = function(){
+					for(var j=0;j<btn.length;j++){
+						btn[j].style.background = "#eee";
+					}
+					this.style.background = "#fff";
+					content.innerHTML = contentArr[this.index];
+				}
+			}
+
+			
+					
+			
+			
+
+		</script>
+</body>
+</html>
