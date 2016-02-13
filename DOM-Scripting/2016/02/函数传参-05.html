@@ -90,7 +90,7 @@
 							 		<div>第四组</div>
 							 </div>
                <div id="slider">
-                       <div id="img"><img src="../images/wallpaper-03.jpg" alt="">	</div>
+                       <div id="img"><img/>	</div>
                        <div id="contorl">
                                <span>第一张</span>
                                <span>第二张</span>
@@ -150,11 +150,24 @@
 			 var num = 0;
 			 var onOff1 = false;
 			 var onOff2 = false;
+				
+				imgArr[num];			
+				imgSrc.src = imgArr[num][num];
 
 			 for(var i=0;i<btn1.length;i++){
 					btn1[i].index = i;
          	fn1(btn1[i]);
 			 }	
+
+			 for(var k=0;k<btn2.length;k++){
+					btn2[k].onclick = function(){
+						alert("请先选择第几组照片");
+					}
+			 }	
+			
+			
+
+
 
 			 function fn1(btn){
 					btn.onclick = function(){
