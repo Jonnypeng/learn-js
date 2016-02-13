@@ -70,9 +70,13 @@
 						background:yellow;
 						color:black;
 					}
-					.active {
-						background:yellow;
-						color:black;
+					.active1 {
+						background:white !important;
+						color:black !important;
+}
+					.active2 {
+						background:yellow !important;
+						color:black !important;
 }
 
 				</style>
@@ -140,20 +144,36 @@
 			 var contorl = document.getElementById("contorl");
 			 var btn2 = contorl.getElementsByTagName("span"); //图片选择按钮
 
+			 var active1 = document.getElementsByClassName("active1");
+			 var active2 = document.getElementsByClassName("active2");
+
 			 var num = 0;
+			 var onOff1 = false;
+			 var onOff2 = false;
 
 			 for(var i=0;i<btn1.length;i++){
 					btn1[i].index = i;
          	fn1(btn1[i]);
 			 }	
 
-			 function fn1(btn1){
-					btn1.onclick = function(){
+			 function fn1(btn){
+					btn.onclick = function(){
+					 if(onOff1){
+							active1[0].setAttribute("class","");
+						}
+						this.setAttribute("class","active1");
+						onOff1 = true;
 						num = this.index;
 						imgArr[num];			
+
 						for(var j=0;j<btn2.length;j++){
 						btn2[j].index = j;
 						btn2[j].onclick = function(){
+					 if(onOff2){
+							active2[0].setAttribute("class","");
+						}
+						this.setAttribute("class","active2");
+						onOff2 = true;
 							imgSrc.src = imgArr[num][this.index];
 }
 }
