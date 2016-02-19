@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title></title>
+</head>
+<body>
+	<div id="select">
+  <select id="sel01" name="" style="margin-left: 15px;">
+					<option value="">--Select--</option>
+          <option value="0">a1</option>
+          <option value="1">he2</option>
+          <option value="2">s2</option>
+  </select>
+  <select id="sel02" name="">
+					<option value="">--Select--</option>
+          <option value="0">b1</option>
+          <option value="1">c1</option>
+  </select>
+  <select id="sel03" name="">
+					<option value="">--Select--</option>
+          <option value="0">d1</option>
+          <option value="1">hd2</option>
+          <option value="2">s2</option>
+          <option value="3">a1</option>
+          <option value="4">ha2</option>
+          <option value="5">s2</option>
+  </select>
+  <select id="sel04" name="">
+					<option value="">--Select--</option>
+          <option value="0">l1</option>
+          <option value="1">hl2</option>
+          <option value="2">lpl</option>
+  </select>
+	</div>
+	<div id="main">
+<img src="http://rigwizard.nov.com/Images/app/CustomRigImages/background.png"/>
+<img style="margin-left:-353px"/>
+<img style="margin-left:-353px"/>
+	</div>
+</body>
+	<script>
+		var sel01 = document.getElementById("sel01");
+		var sel02 = document.getElementById("sel02");
+		var sel03 = document.getElementById("sel03");
+		var sel04 = document.getElementById("sel04");
+
+		var main = document.getElementById("mian");
+		var mainImg = document.getElementsByTagName("img");
+
+		var Arr01 = [
+			"http://rigwizard.nov.com/Images/app/CustomRigImages/SGL-TEL-CR.PNG",
+			"http://rigwizard.nov.com/Images/app/CustomRigImages/DBL-TEL-CR.PNG",
+			"http://rigwizard.nov.com/Images/app/CustomRigImages/TRP-CNT-SLR.PNG"
+		];
+		var Arr02 = [
+			"http://rigwizard.nov.com/Images/app/CustomRigImages/TRP-TEL-CR.PNG",
+			"http://rigwizard.nov.com/Images/app/CustomRigImages/TRP-CNT-SLR.PNG"
+		];
+		var Arr03 = [
+			"http://rigwizard.nov.com/Images/app/CustomRigImages/TRP-CNT-SLR.PNG",
+			"http://rigwizard.nov.com/Images/app/CustomRigImages/SGL-TEL-SLR.PNG",
+			"http://rigwizard.nov.com/Images/app/CustomRigImages/TRP-TEL-CR.PNG",
+			"http://rigwizard.nov.com/Images/app/CustomRigImages/TRP-CNT-SLR.PNG",
+			"http://rigwizard.nov.com/Images/app/CustomRigImages/DBL-TEL-CR.PNG",
+			"http://rigwizard.nov.com/Images/app/CustomRigImages/TRP-CNT-SLR.PNG"
+		];
+		var Arr04 = [
+			{url1:"http://rigwizard.nov.com/Images/app/CustomRigImages/TRP-CNT-SLR.PNG",
+			url2:""},
+			{url1:"http://rigwizard.nov.com/Images/app/CustomRigImages/TRP-CNT-SLR-TD.PNG",
+			url2:""},
+			{url1:"http://rigwizard.nov.com/Images/app/CustomRigImages/TRP-CNT-SLR-TD.PNG",
+			url2:"http://rigwizard.nov.com/Images/app/CustomRigImages/RAILSKID.png"}
+		];
+		
+				sel01.onchange = function(){
+					img();
+					mainImg[1].src = Arr01[sel01.value];
+				};
+				sel02.onchange = function(){
+					img();
+					mainImg[1].src = Arr02[sel02.value];
+				};
+				sel03.onchange = function(){
+					img();
+					mainImg[1].src = Arr03[sel03.value];
+				};
+				sel04.onchange = function(){
+					img();
+					mainImg[1].src = Arr04[sel04.value].url1;
+					mainImg[2].src = Arr04[sel04.value].url2;
+				};
+
+		function img(){
+			mainImg[0].src="http://rigwizard.nov.com/Images/app/CustomRigImages/grid.png";
+		}
+
+	</script>
+</html>
