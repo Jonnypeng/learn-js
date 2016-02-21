@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title></title>
+</head>
+<body>
+	<ul id="ul1">
+	        <li></li>
+	        <li></li>
+	        <li></li>
+	        <li></li>
+	        <li></li>
+	        <li></li>
+	        <li></li>
+	</ul>
+  <script>
+		var aLi = document.getElementsByTagName("li");
+		var arr = ["red","yellow","blue"];
+		var str = "";
+
+		/*r s = 65;
+		alert(Math.floor(s/60) + "分" + s%60  + "秒");*/
+
+		for(var i =0;i<aLi.length;i++){
+			aLi[i].index = i;
+			aLi[i].style.background = arr[i%arr.length];
+
+			aLi[i].onmouseover = function(){
+				str = this.style.background;
+				this.style.background = "gray";
+			}
+			aLi[i].onmouseout = function(){
+				//this.style.background = arr[this.index%arr.length];
+				this.style.background = str;
+			}
+
+		}
+
+	</script>	      
+</body>
+</html>
