@@ -76,25 +76,20 @@
 	<script>
 		var btn = document.getElementsByClassName("title");	
 		var list = document.getElementsByClassName("list");
-		//var active = document.getElementsByClassName("active");
-		//var onOff = true;
+		var active = document.getElementsByClassName("active");
+		var onOff = true;
 
 		for(var i=0;i<btn.length;i++){
 			btn[i].index = i;
 			btn[i].onclick = function(){
-					/*this.className="active";
+				for(var k=0;k<list.length;k++){
+					btn[k].style.background = "green";
+				}
+				this.style.background = "blue";
 					for(var j=0;j<list.length;j++){
 					list[j].style.display = "none";
 					}	
 				list[this.index].style.display = "block";
-				}*/
-				if(this.className == "title"){
-					this.className = "active";
-					list[this.index].style.display = "block";
-			}else{
-				this.className = "title";
-				list[this.index].style.display = "none";
-			}
 			}
 			}
 	</script>

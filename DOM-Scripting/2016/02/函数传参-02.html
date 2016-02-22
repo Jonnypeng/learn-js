@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title></title>
+</head>
+<body>
+    <ul id="list">
+            <li>
+							<input type="button" value="-">
+							<strong>0</strong>
+							<input type="button" value="+">
+							单价：<span>12.5</span>元
+							合计：<span>0</span>元
+						</li>
+            <li>
+							<input type="button" value="-">
+							<strong>0</strong>
+							<input type="button" value="+">
+							单价：<span>20</span>元
+							合计：<span>0</span>元
+						</li>
+            <li>
+							<input type="button" value="-">
+							<strong>0</strong>
+							<input type="button" value="+">
+							单价：<span>10</span>元
+							合计：<span>0</span>元
+						</li>
+		<p>商品合计共：0件，共花费了：0元。 其中最贵的商品单价是：0元</p>
+    </ul>	 
+
+		<script>
+			var oUl = document.getElementById("list");
+			var aLi = oUl.getElementsByTagName("li");
+			var oP = document.getElementsByTagName("p")[0];
+			var sum = 0; //商品总数
+			var money = 0; //总价格
+			var pri = 0; //最贵价格
+
+			for(var i=0;i<aLi.length;i++){
+				fn(aLi[i]);
+			}
+
+			function fn(oLi){
+				var aBtn = oLi.getElementsByTagName("input"); //全部按钮
+				var oStrong = oLi.getElementsByTagName("strong")[0]; //数量元素
+				var aSpan = oLi.getElementsByTagName("span"); //单价与合计
+				var n1 = Number(oStrong.innerHTML); //数据化数量
+				var n2 = parseFloat(aSpan[0].innerHTML); //数据化单价
+
+				aBtn[1].onclick = function(){   
+					n1++;
+					sum++;
+					money+=n2;
+					if(n2>pri)  //当单价大于最高单价时
+					{
+						pri = n2;
+					}
+
+					oStrong.innerHTML = n1;			//数量
+					aSpan[1].innerHTML = n1*n2 //合计
+					oP.innerHTML = "商品合计共：" + sum + "件" + "共花费了" + money + "元" + "最贵的单价为"	+ pri + "元";
+				}
+
+				aBtn[0].onclick = function(){
+					if(n1>0){
+						n1--;
+						sum--;
+						money-=n2;
+					}
+					if(n1==0){
+						pri = 0;  //当数量等于零，那么最高价也将重置为0
+					}
+					oStrong.innerHTML = n1;			//数量
+					aSpan[1].innerHTML = n1*n2 //合计
+					fn3();
+					oP.innerHTML = "商品合计共：" + sum + "件" + "共花费了" + money + "元" + "最贵的单价为"	+ pri + "元";
+
+				}
+
+				function fn3(){
+					for(var i=0;i<aLi.length;i++){
+					 if(aLi[i].getElementsByTagName("strong")[0].innerHTML>0){
+					 	if(parseFloat(aLi[i].getElementsByTagName("span")[0].innerHTML) > pri){
+							pri = parseFloat(aLi[i].getElementsByTagName("span")[0].innerHTML);
+						}
+					 }	
+					}
+				}
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			}
+
+		</script>
+</body>
+</html>
