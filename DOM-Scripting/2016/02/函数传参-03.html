@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title></title>
+				<link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+				<style>
+					#main{
+						width:500px;
+						height:auto;
+						margin:300px auto;
+						border:1px solid gray;
+						text-align:left;
+					}
+
+					#title{
+						padding:5px 15px;
+						background-color:red;
+						color:white;
+					}
+					#content{
+						padding:5px 15px;
+						border-bottom:1px solid gray;
+					}
+					.fa-pencil:hover,input:hover{
+						cursor:pointer;
+					}
+					#input{
+						display:none;
+					}
+						
+				</style>
+</head>
+<body>
+       <div id="main">
+               <div id="title">
+							 	分类名称
+							 </div>
+               <div id="content">
+							 	<div id="titleEdit">
+							 	<span>妙味实体课程</span>
+								<i id = "edit" class="fa fa-pencil"></i>
+								</div>
+								<div id="input">
+							 	<input type="text"/>
+							 	<input type="button" value="保存">
+							 	<input type="button" value="取消">
+							 </div>
+               <div id="control"></div>
+       </div>	 
+
+			 <script>
+			 	var titleEdit = document.getElementById("titleEdit"); //标题及控制栏
+				var titleDate = titleEdit.innerHTML;
+				var input = document.getElementById("input"); //输入栏
+				var control = document.getElementById("control"); //控制面
+
+				var edit = document.getElementById("edit"); //编辑按钮
+				var inputText = input.getElementsByTagName("input")[0]//输入框
+				var save = input.getElementsByTagName("input")[1]; //保存
+				var close = input.getElementsByTagName("input")[2]; //取消
+
+				edit.onclick = function (){
+					input.style.display = "block";
+					titleEdit.style.display = "none";
+					control.style.display = "block";
+						save.onclick = function()	{
+							titleEdit.getElementsByTagName("span")[0].innerHTML = inputText.value ;
+							titleEdit.style.display = "block";
+							input.style.display = "none";
+							control.innerHTML = inputText.value;
+							control.style.display = "none";
+						}
+						close.onclick = function(){
+							titleEdit.getElementsByTagName("span")[0].innerHTML = control.innerHTML;
+							titleEdit.style.display = "block";
+							input.style.display = "none";
+							control.style.display = "none";
+						}
+				}
+
+			 </script>
+</body>
+</html>

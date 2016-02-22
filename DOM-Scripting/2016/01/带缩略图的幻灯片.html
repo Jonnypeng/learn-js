@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title></title>
+				<link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+				<style>
+				body {
+				background:-webkit-radial-gradient(red,black) no-repeat;
+				background:-moz-radial-gradient(red,black) no-repeat;
+				background:-o-radial-gradient(red,black) no-repeat;
+				background:radial-gradient(red,black) no-repeat;
+				width:100%;
+				height:900px;
+				box-shadow:1px 1px 10px;
+				margin:0px
+				}
+				#slider{
+					width:700px;
+					height:520px;;
+					background:black;
+					margin:30px auto;
+				}
+				#img {
+					width:100%;
+					height:460px;
+					overflow:hidden;
+				}
+				.wimg{
+					width:100%;
+					height:auto;
+				}
+				#control {
+					position: absolute;
+					z-index: 3;
+					top: 230px;
+					width: 670px;
+					padding: 0px 15px;
+				}
+				.fa-chevron-circle-left,.fa-chevron-circle-right{
+					color:white;
+				}
+				.fa-chevron-circle-right{
+					float:right;
+				}
+				#small-img{
+							width: inherit;
+							height: 60px;
+						  text-align: center;
+						  position: absolute;
+						  top: 445px; 
+				}
+
+				#small-img span{
+					display:inline-block;
+					width:90px;
+					box-shadow:1px 1px 10px;
+					margin:0px -39px;
+				}
+				#small-img span img{
+					display:none;
+				}
+				#circle{
+					width:100%;
+					height:auto;
+					text-align:center;
+					color:white;
+					margin-top: 30px;
+				}
+				.fa {
+					opacity:0.7;
+				}
+				.fa:hover{
+					opacity:1;
+					cursor:pointer;
+					color:yellow;
+				}
+				
+				</style>
+</head>
+<body>
+		<div id="slider">
+						<div id="control">
+							<i class="fa fa-chevron-circle-left fa-3x"></i>		
+							<i class="fa fa-chevron-circle-right fa-3x"></i>		
+						</div>
+		        <div id="img">
+							<img id="imgSrc" src="../images/wallpaper-01.jpg" alt="" class="wimg">
+						</div>
+		        <div id="small-img">
+							<div>
+							        <span><img alt="" class="wimg"></span>
+							        <span><img alt="" class="wimg"></span>
+							        <span><img alt="" class="wimg"></span>
+							        <span><img alt="" class="wimg"></span>
+							        <span><img alt="" class="wimg"></span>
+							        <span><img alt="" class="wimg"></span>
+							</div>		
+						</div>
+						<div id="circle">
+						        <i class="fa fa-circle"></i>
+						        <i class="fa fa-circle"></i>
+						        <i class="fa fa-circle"></i>
+						        <i class="fa fa-circle"></i>
+						        <i class="fa fa-circle"></i>
+						        <i class="fa fa-circle"></i>
+						</div>
+		</div>
+       <script>
+			 var src = [ "../images/wallpaper-01.jpg", "../images/wallpaper-02.jpg", "../images/wallpaper-03.jpg", "../images/wallpaper-04.jpg", "../images/wallpaper-05.jpg", "../images/wallpaper-06.jpg" ];
+			 var imgSrc = document.getElementById("imgSrc"); //图片载入区域 	
+			 var control = document.getElementById("control");
+			 var controlFa = control.getElementsByTagName("i");//控制上下幅按钮
+			 var smallImg = document.getElementById("small-img"); 
+			 var smallImgSrc = smallImg.getElementsByTagName("img"); //缩略图载入区域
+			 var circle = document.getElementById("circle"); 
+			 var circleFa = circle.getElementsByTagName("i");//控制缩略图按钮
+			 var i = 0;
+
+			 for(var s=0;s<smallImgSrc.length;s++){
+			 	smallImgSrc[s].src = src[s];
+			 }
+
+			 controlFa[0].onclick = function(){
+			 			i--;
+						if(i<0){
+							i = src.length-1;
+						}
+						imgSrc.src = src[i];	
+						};
+			 	
+			 controlFa[1].onclick = function(){
+			 			i++;
+						if(i>src.length-1){
+							i = 0;
+						}
+						imgSrc.src = src[i];	
+						};
+				
+				for(j=0;j<circleFa.length;j++){
+					circleFa[j].index = j;
+					circleFa[j].onmouseover = function(){
+						for(k=0;k<circleFa.length;k++){
+							smallImgSrc[k].style.display = "none";
+						}
+					smallImgSrc[this.index].style.display = "block";
+					}
+					circleFa[j].onmouseout = function(){
+					smallImgSrc[this.index].style.display = "none";
+					}
+					circleFa[j].onclick = function(){
+					imgSrc.src = src[this.index];
+					}
+
+				}
+			 </script>	 
+</body>
+</html>

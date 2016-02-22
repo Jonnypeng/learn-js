@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title></title>
+</head>
+<body>
+      <script>
+			/*
+				//fn("奇妙");
+				//fn("miaowei");
+				//fn(function(){alert(1)});
+				//fn(function(){alert(4)});
+				
+				fn(window,document);
+
+
+				function fn(a,b){
+					//alert(a.charAt(1)); //使用charAt(number) 方法可以对字符串进行数组查询返回值
+					//a();//可以通过参数值加括号对函数进行直接调用
+					a.onload = function(){
+						b.body.innerHTML = "abc";
+					}
+				}*/
+				fu(100);
+				fu("miao");
+				fu(function(){alert(1)});
+
+				function fu(a){
+					if(typeof a === "number"){
+						alert(a+20);
+					}
+					else if(typeof a === "string"){
+						alert(a.charAt(1));	
+					}
+					else if(typeof a === "function"){
+						a();
+					}	
+				};
+			</script>
+</body>
+</html>

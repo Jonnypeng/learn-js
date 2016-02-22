@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title></title>
+				<link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+<style>
+.fa-star{
+	color:gray;
+}
+.fa-star:hover{
+	cursor:pointer;
+}
+</style>
+</head>
+<body>
+     <div id="mian">
+             <table>
+                     <tr>
+                             <td>评价文档:</td>
+														 <td>
+														 <i class="fa fa-star"></i>
+														 <i class="fa fa-star"></i>
+														 <i class="fa fa-star"></i>
+														 <i class="fa fa-star"></i>
+														 <i class="fa fa-star"></i>
+														 </td>
+                             <td>
+														 </td>
+                     </tr>
+             </table>
+     </div>	   
+</body>
+<script>
+var textArr = [
+	"很差",
+	"较差",
+	"还行",
+	"推荐",
+	"力荐"
+]
+
+var star = document.getElementsByTagName("i");
+var text = document.getElementsByTagName("td")[2];
+var onOff = true;
+
+for(var i =0;i<star.length;i++){
+	star[i].index = i;
+	
+	star[i].onmouseover = function(){
+		if(onOff){
+		for(var j=0;j<=this.index;j++){
+			star[j].style.color = "#F8800D";
+			text.innerHTML = textArr[this.index];
+		}
+		}
+	}
+
+	
+
+	star[i].onclick = function(){
+		if(onOff){
+		onOff = false;	
+		}else if(!onOff){
+			onOff = true;
+		for(var h=0;h<star.length;h++){
+			star[h].style.color = "gray";
+			text.innerHTML = textArr[this.index];
+		};	
+			
+		};
+	};
+
+	
+	star[i].onmouseout = function(){
+		if(onOff){
+		for(var k=0;k<=this.index;k++){
+			star[k].style.color = "gray";
+			text.innerHTML = textArr[this.index];
+		};	
+		};
+}	
+
+}	
+
+
+</script>
+</html>
