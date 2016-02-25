@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title></title>
+<style>
+	div{
+		width:100px;height:100px;background:red;
+	}
+</style>
+</head>
+<body>
+	<input id="btn1" type="button" value="按钮">
+	<div id="div1"></div>
+	
+  <script>
+		/*var x = 1;
+		var y = 5;
+		
+		//alert(fn1(x,y));
+		alert(typeof fn1(x,y));
+
+		function fn1(x,y){
+			//return 100;
+			return x*y;
+		};*/
+
+		/*fn2(3)(10);
+		function fn2(a){
+			return function(b){
+				alert(a*b);
+			};
+		};*/
+
+		window.onload = function(){
+			getid("btn1").onclick = function(){
+				getid("div1").innerHTML = 123;	
+			};
+		};
+
+		function getid(id){
+			return document.getElementById(id);
+		};
+	</script>      
+</body>
+</html>
