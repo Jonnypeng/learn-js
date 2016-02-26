@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title></title>
+</head>
+<body>
+	<script>
+	//当函数的参数个数无法确定的时候，用arguments
+
+//	alert(sum(1,2,3));
+//	alert(sum(1,2,3,4,5));
+//	function sum(){
+//	 var n = 0;
+//	 for(var i =0;i<arguments.length;i++){
+//	 	n = n + arguments[i];
+//	 }
+//	 	return n;
+//	}
+//
+
+	//课后小练习
+	alert(sum(1,2,3,'+'));   //6
+	alert(sum(10,2,3,4,'-'));   //1
+
+	function sum(){
+		var n = 0;
+		for(var i=0;i<arguments.length-1;i++){
+			if(arguments[arguments.length-1]=="+"){
+					n = n + arguments[i];
+			}	
+			if(arguments[arguments.length-1]=="-"){
+					//n = arguments[0] -arguments[1] -arguments[2] -arguments[3]; 
+					n = arguments[i-3] -arguments[i-2] -arguments[i-1] -arguments[i]; 
+			}	
+		};
+		return n;
+	};
+	</script>
+        
+</body>
+</html>
