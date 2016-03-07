@@ -8,25 +8,22 @@
 </style>
 </head>
 <body>
-<input id="btn1" type="button" value="向上">
-<input id="btn2" type="button" value="向下">
+<input id="btn1" type="button" value="走">
 <div id="div1"></div>		        
 
 <script>
 var oBtn1 = document.getElementById("btn1");
-var oBtn2 = document.getElementById("btn2");
 var oDiv = document.getElementById("div1");
 
 oBtn1.onclick = function(){
-	doMove(oDiv,"top",12,40); //原计划是-12，但是参数负数不保留在客户端
+	doMove(oDiv,"left",12,900,function(){
+		doMove(oDiv,"top",34,500);	
+	}); //原计划是-12，但是参数负数不保留在客户端
 };
 
-oBtn2.onclick = function(){
-	doMove(oDiv,"top",12,800);
-};
 
 
-function doMove(obj,attr,dir,target){
+function doMove(obj,attr,dir,target,endFn){
 
 	dir = parseInt(getStyle(obj,attr)) < target ? dir:-dir;
 
@@ -41,6 +38,11 @@ clearInterval(obj.timer);
 
 	if(speed==target){  //809>>800
 		clearInterval(obj.timer);
+
+		/*if(endFn){
+			endFn();
+		} */
+		endFn && endFn();
 	};
 
 	
