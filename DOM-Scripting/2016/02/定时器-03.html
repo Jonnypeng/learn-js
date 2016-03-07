@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title></title>
+       <style>
+			 		html{
+						background:black;
+					}
+					img{
+						margin:30px auto;
+					}	
+
+			 </style>	 
+</head>
+<body>
+		<img id="img"></img>
+
+
+		<script>
+
+		var img = document.getElementById("img");
+		var timer = null;
+		
+
+
+		timer = setTimeout(display,2000);
+		function display(){
+		img.src =	"../images/saaya-irie-01.jpg"; 
+			setTimeout(
+			function(){img.src ="";},	
+		3000	);
+		};
+
+
+			
+		</script>
+
+</body>
+</html>

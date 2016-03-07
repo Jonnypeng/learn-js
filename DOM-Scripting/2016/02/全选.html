@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title></title>
+</head>
+<body>
+       <table>
+               <tr>
+                       <td><input type="checkbox"></td>
+                       <td>私奔</td>
+                       <td>梁博</td>
+               </tr>
+               <tr>
+                       <td><input type="checkbox"></td>
+                       <td>私奔</td>
+                       <td>梁博</td>
+               </tr>
+               <tr>
+                       <td><input type="checkbox"></td>
+                       <td>私奔</td>
+                       <td>梁博</td>
+               </tr>
+               <tr>
+                       <td><input type="checkbox"></td>
+                       <td>私奔</td>
+                       <td>梁博</td>
+               </tr>
+               <tr>
+                       <td><input type="checkbox"></td>
+                       <td>私奔</td>
+                       <td>梁博</td>
+               </tr>
+               <tr>
+                       <td><input type="checkbox"></td>
+                       <td>私奔</td>
+                       <td>梁博</td>
+               </tr>
+               <tr>
+                       <td><input type="checkbox"></td>
+                       <td>全选</td>
+               </tr>
+       </table>
+
+			 <script>
+			 		var box = document.getElementsByTagName("input");
+					var num = 0;
+					var boxed = document.getElementsByClassName("boxed");
+				
+					for(var i=0;i<box.length-1;i++){
+						box.index = i;
+						box[i].onclick = function(){
+							if(this.checked==true){
+							this.setAttribute("class","boxed");
+							}else{
+							this.setAttribute("class","");
+							}
+							if(boxed.length==box.length-1){
+								box[box.length-1].checked = true;
+							}else{
+								box[box.length-1].checked = false;
+							}
+						}
+					}
+					
+						box[box.length-1].onclick = function(){
+					    for(var j=0;j<box.length-1;j++){
+								if(this.checked){
+								box[j].checked = true;
+								}else{
+								box[j].checked = false;
+								}
+						}
+					}
+
+
+			 </script>
+       
+</body>
+</html>

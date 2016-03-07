@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title></title>
+</head>
+<body>
+<button>开始播放</button>
+<button>暂停播放</button>
+
+       <script>
+					var arrUrl = ["../images/saaya-irie-01.jpg","../images/saaya-irie-02.jpg","../images/saaya-irie-03.jpg","../images/saaya-irie-04.jpg","../images/saaya-irie-05.jpg"];
+					var num = 0;
+					var timer = null;
+					var oBody = document.body;
+					
+					var btn = document.getElementsByTagName("button");	
+
+
+					btn[0].onclick = startInterval; 
+					btn[1].onclick = pauseInterval; 
+
+					function startInterval(){
+					pauseInterval();
+					timer = setInterval(start,1000);
+					function start(){
+						oBody.style.background = "url("+arrUrl[num]+") no-repeat"; 
+						num++;
+						num%=arrUrl.length;
+					};
+					};
+
+					function pauseInterval(){
+					clearInterval(timer);
+					};
+
+					/*
+						点击事件之后必须加上函数，clearInterval();括号内必须跟入setInterval的直接变量
+						为了避免多次点击事件而重复对函数进行调用，所以setInterval之前必须进行清空才能使用
+					
+					*/
+
+			 </script>
+</body>
+</html>

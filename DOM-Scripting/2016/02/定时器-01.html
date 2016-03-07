@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title></title>
+</head>
+<body>
+       <script>
+
+			 var timer = null;
+			 var i = 0;
+			 timer = setInterval(fn1,2000);
+			 	
+				function fn1(){
+					document.title = i ;
+					i++;
+					if(i>10){
+						clearInterval(timer);
+					};
+				};
+
+				/*
+					setInterval(函数名，毫秒数); 表示重复调用函数;
+					clearInterval(setInterval所变量);立即停止调用函数
+				*/
+			 </script>	 
+</body>
+</html>
