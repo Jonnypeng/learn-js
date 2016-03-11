@@ -1,1 +1,43 @@
-html:5	
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title></title>
+<style>
+	#box{
+	width:100px;
+	height:100px;
+	background:red;
+	margin:10px 0px;
+	position:relative;
+}
+</style>
+</head>
+<body>
+      	<input id="btn1" type="button" value="向前">
+      	<input id="btn2" type="button" value="向后">
+
+				<div id="box"></div>
+      	
+<script>
+	var btnprev = document.getElementById("btn1");
+	var btnNext = document.getElementById("btn2");
+	var box = document.getElementById("box");
+
+	var setp = 0;
+	var attr = "left";
+
+	setInterval(moveNext,10);
+
+	function moveNext(){
+		setp+=1;
+		if(setp=80){
+			alert(getComputedStyle(box)[attr]);
+	}
+		box.style.left = setp + "px";
+}
+
+</script>
+
+</body>
+</html>
