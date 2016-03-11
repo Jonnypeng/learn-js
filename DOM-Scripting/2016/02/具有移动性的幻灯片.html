@@ -67,22 +67,15 @@
 	var timer = null;
 	var target = "left";
 	var btn = document.getElementsByTagName("input")[0];
-	var targetNum = -30;
 
 
 
 	timer = setInterval(function slider(){
-	attr -=1;
+	attr -= 0.5;
+	if(attr<-1400){attr = attr + 700};
 	oUplay.style.left = attr + "px";
-},50);
+},1);
 
-	if(parseInt(getStyle())==targetNum){
-	alert(1);
-};
-
-
-
-	
 
 	function getStyle(){
 		return getComputedStyle(oUplay)[target];
