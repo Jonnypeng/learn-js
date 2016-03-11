@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title></title>
+<link href="//cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+<style>
+	#playbox {
+	width:700px;
+	height:auto;
+	margin:15px auto;
+	overflow:hidden;
+}
+
+	img{
+	width:100%;
+	height:auto;
+}
+	ul{
+	padding:0px;
+	display:block;
+}
+	li{
+	list-style:none;
+	display:inline-block;
+}
+
+	#oUplay {
+	width:888888px;
+	position:relative;
+	left:0px;
+}
+	#oUplay li {
+	width:700px;
+}
+
+</style>
+</head>
+<body>
+<div id="playbox">
+        <div id="pre"></div>
+        <div id="next"></div>
+        <div id="smalltitle">
+					<ul>
+					        <li></li>
+					        <li></li>
+					        <li></li>
+					        <li></li>
+					        <li></li>
+					        <li></li>
+					        <li></li>
+					        <li></li>
+					</ul>
+				</div>
+        <ul id="oUplay">
+                <li><img src="http://dag1688.aliapp.com/wp-content/uploads/2015/10/metabo-%E4%BC%98%E6%83%A0%E5%A4%A7%E4%BF%83%E9%94%80.jpg" alt=""></li>
+                <li><img src="http://dag1688.aliapp.com/wp-content/uploads/2015/10/%E5%85%AC%E7%89%9B%E6%83%85%E6%99%AF%E5%85%A8%E9%9D%A2%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88.jpg" alt=""></li>
+                <li><img src="http://dag1688.aliapp.com/wp-content/uploads/2015/10/WD-40%E8%AE%A9%E9%87%91%E5%B1%9E%E8%BF%94%E8%80%81%E8%BF%98%E7%AB%A5.jpg" alt=""></li>
+        </ul>
+</div>
+
+<input type="button" value="按钮">		
+
+<script>
+	var oUplay = document.getElementById("oUplay");
+	var attr = 0;
+	var timer = null;
+	var target = "left";
+	var btn = document.getElementsByTagName("input")[0];
+	var targetNum = -30;
+
+
+
+	timer = setInterval(function slider(){
+	attr -=1;
+	oUplay.style.left = attr + "px";
+},50);
+
+	if(parseInt(getStyle())==targetNum){
+	alert(1);
+};
+
+
+
+	
+
+	function getStyle(){
+		return getComputedStyle(oUplay)[target];
+};
+
+</script>
+</body>
+</html>

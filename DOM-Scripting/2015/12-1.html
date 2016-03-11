@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title></title>
+</head>
+		<script>
+				window.onload = function(){
+						var body = document.getElementsByTagName('body')[0];
+						var btn = body.getElementsByTagName('button');
+						for(var num = 0;num < 40;num++){
+						body.innerHTML += "<button>" + "按钮" +"</button>";
+				}
+						for(var num = 0;num < 20;num++){
+						//btn[num].style.marginLeft = "15px";
+						btn[num].style.position = "absolute";
+						btn[num].style.top = num*30 + "px";
+						btn[num].style.left = num*30 + "px";
+						}
+
+						for(var num = 20;num < 40;num++){
+						//btn[num].style.marginLeft = "15px";
+						btn[num].style.position = "absolute";
+						btn[num].style.top = num*30 + "px";
+						btn[num].style.left = num*30 + "px";
+						}
+				};
+		</script>
+<body>
+        
+</body>
+</html>
