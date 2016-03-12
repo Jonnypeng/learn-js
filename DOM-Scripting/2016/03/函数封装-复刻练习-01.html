@@ -10,6 +10,7 @@
 	background:red;
 	margin:10px 0px;
 	position:relative;
+	left:0px;
 }
 </style>
 </head>
@@ -20,22 +21,36 @@
 				<div id="box"></div>
       	
 <script>
-	var btnprev = document.getElementById("btn1");
+	var btnPrev = document.getElementById("btn1");
 	var btnNext = document.getElementById("btn2");
 	var box = document.getElementById("box");
+	var timer = null;
 
 	var setp = 0;
 	var attr = "left";
 
-	setInterval(moveNext,10);
 
-	function moveNext(){
-		setp+=1;
-		if(setp=80){
-			alert(getComputedStyle(box)[attr]);
-	}
-		box.style.left = setp + "px";
-}
+  btnNext.onclick = function(){
+	move(12,700); 
+	};
+  btnPrev.onclick = function(){
+	move(-12,0); 
+	};
+
+	function move(dir,target){
+		clearInterval(timer);
+		timer = setInterval(function (){
+	  var speed = parseInt(getStyle()) + dir	;
+		if (speed > target && dir>0 || speed < target && dir<0){
+			speed = target;
+		};
+		box.style.left = speed + "px";
+},10);
+			}
+
+	function getStyle(){
+		return getComputedStyle(box)[attr];
+	};	
 
 </script>
 

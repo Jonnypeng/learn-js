@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title></title>
+<style>
+	input{
+		margin-top:60px;
+	}
+</style>
+</head>
+<body>
+	<script>
+	var str = "";
+	var len = 20;
+	var timer = null;
+	var num = 0;
+	var onOff = true;
+
+	for(var i=0;i<len;i++){
+str += '<div style="width:50px;height:50px;background:red;position:absolute;top:0px;left:'+ i*60 +'px;"></div>'
+	};
+
+	var aDiv = document.getElementsByTagName("div");
+	document.body.innerHTML = str; 
+
+	document.onclick = function (){
+		if(onOff){
+			down();
+		}
+		else {
+			up();	
+		};
+	}; 
+	
+	
+	function down(){
+		clearInterval(timer);
+		timer = setInterval(function (){
+		doMove(aDiv[num],'top',23,500);	
+		num ++;
+		if(num > len){
+			clearInterval(timer);
+		};
+		},100);
+			onOff = false;
+	};
+
+	function up(){
+		clearInterval(timer);
+		timer = setInterval(function (){
+		doMove(aDiv[num],'top',-23,0);	
+		num --;
+		if(num === len){
+			clearInterval(timer);
+		};
+		},100);
+			onOff = true;
+	};
+function doMove(obj,attr,dir,target){
+
+dir = parseInt(getStyle(obj,attr)) < target ? dir:-dir;
+
+clearInterval(obj.timer);
+	obj.timer = setInterval(function (){
+	var speed = parseInt(getStyle(obj,attr)) + dir;
+	
+	if(speed > target && dir > 0 || speed < target && dir < 0){speed=target}; //往后
+
+	obj.style[attr] = speed + "px"
+
+	if(speed==target){  //809>>800
+		clearInterval(obj.timer);
+	};
+	
+	},30);
+}
+
+function getStyle(obj,attr){
+	return getComputedStyle(obj)[attr];
+};
+	</script>	        
+</body>
+</html>
