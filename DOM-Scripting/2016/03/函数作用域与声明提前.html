@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title></title>
+</head>
+<body>
+       <script>
+	var scope = "global";
+	function f(){
+		console.log(scope); //这里输出的不是 "global".而是"undefuned"
+		var scope = "local";
+		console.log(scope);
+	};
+	f();
+			 </script>	 
+</body>
+</html>
+

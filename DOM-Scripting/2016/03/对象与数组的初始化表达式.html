@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title></title>
+</head>
+<body>
+       <script>
+					var sparseArray = [1,,,,5];
+					console.log(sparseArray[1]);  //逗号空格处都被置入"undefined"
+
+					var q ={};
+					q.x = 2.3;
+					q.y = -1.2;
+					console.log(q.y);  //=>输出-1.2
+					
+					var rectangle = {upperLeft:{x:2,y:2},lowerRight:{x:4,y:5}};
+					console.log("嵌套对象",rectangle.lowerRight.y);  //=>输出5
+
+					/*对象直接量的属性名称可以是字符串,而非一定是标识符*/
+					var side = 1 ;
+					var square = {"upperLeft":{x:10,y:12},'lowerRight':{x:30+side,y:40+side}};
+					console.log(square.lowerRight.y); //表达的时候直接使用属性法
+			 </script>	 
+</body>
+</html>

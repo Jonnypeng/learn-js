@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title></title>
+</head>
+<body>
+       <script>
+			 		var scope = "gloabal";
+					var test = "yes"
+					function checkscope(){
+						scope = "local";  //没有使用var,赋值将通过函数执行修改全局变量
+						var test = "no";  //使用了var,赋值即使通过函数执行也不会修改全局变量
+						//return scope;
+						//return test;
+					};
+
+				checkscope(); //返回local,也就是局部变量赋值的值
+					alert(scope);  //全局变量被修改
+					alert(test);  //全局变量未被修改
+
+
+					/*下面是嵌套作用域*/
+					var scope = "global scope"
+					function checkscope(){
+						var scope = "local scope"
+							function nested(){
+								var scope = "nested scope"
+								return scope;
+							}
+							return nested();
+					}
+					alert(checkscope());  //嵌套函数,最后返回值为 "nested scope"
+			 </script>
+</body>
+</html>
