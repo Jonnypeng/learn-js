@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+<p id="time"></p>
+<img src="../images/date/2.png" alt="">
+<img src="../images/date/1.png" alt="">
+<img src="../images/date/2.png" alt="">
+<img src="../images/date/3.png" alt="">
+<img src="../images/date/4.png" alt="">
+<img src="../images/date/5.png" alt="">
+<script>
+
+var oBody = document.body;
+var oP = document.getElementById("time");
+var aImg = document.getElementsByTagName("img");
+
+setInterval(fnTime,1000);
+
+function fnTime(){
+	var myTime = new Date();
+	var iHours = myTime.getHours();
+	var iMin = myTime.getMinutes();
+	var iSec = myTime.getSeconds();
+	var str = toTwo(iHours)  + toTwo(iMin) + toTwo(iSec); 
+
+	oP.innerHTML = str; 
+
+	//aImg[4].src = "../images/date/" + str.charAt(4) + ".png";
+	//aImg[5].src = "../images/date/" + str.charAt(5) + ".png";
+	for(var i=0;i<aImg.length;i++){
+		aImg[i].src = "../images/date/" + str.charAt(i) + ".png";
+	}
+
+};
+
+
+function toTwo(n){
+	return n < 10 ? "0"+n : ""+n;
+}
+
+
+</script>
+</body>
+
+</html>

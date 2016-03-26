@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+
+<script>
+ 
+setInterval(fnTime,1000);
+function fnTime(){
+var oBody = document.body;
+
+var myTime = new Date();
+var iYear = myTime.getFullYear();
+var iMonth = myTime.getMonth();
+var iDate = myTime.getDate();
+var iWeek = myTime.getDay();
+var iHours = myTime.getHours();
+var iMin = myTime.getMinutes();
+var iSec = myTime.getSeconds();
+var str = "";
+
+if(iWeek ===0 )iWeek = "星期日";
+if(iWeek ===1 )iWeek = "星期一";
+if(iWeek ===2 )iWeek = "星期二";
+if(iWeek ===3 )iWeek = "星期三";
+if(iWeek ===4 )iWeek = "星期四";
+if(iWeek ===5 )iWeek = "星期五";
+if(iWeek ===6 )iWeek = "星期六";
+
+str = iYear + "年" + toTwo(iMonth) + "月" + toTwo(iDate) + "日" + iWeek + toTwo(iHours) + ":" + toTwo(iMin) + ":" + toTwo(iSec);
+oBody.innerHTML = str;
+};
+
+function toTwo(n){
+	return n < 10 ? "0"+n : ""+n;
+}
+
+
+</script>
+</body>
+
+</html>

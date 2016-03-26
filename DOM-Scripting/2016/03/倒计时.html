@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+<script>
+var iNow = new Date();
+var iNew = new Date(2016,2,27,13,27,0);   //=>月份中的1月从0月开始计算，以此类推
+
+var t = Math.floor((iNew-iNow)/1000) ;  //毫秒===>秒
+var str = Math.floor(t/86400) + "天" + Math.floor(t%86400/3600) + "时" +Math.floor(t%86400%3600/60)+"分"+t%60 + "秒";
+alert(str);
+
+</script>		
+</body>
+</html>
