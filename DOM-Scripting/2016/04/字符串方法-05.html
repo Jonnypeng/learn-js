@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+<script>
+var longStr = "我是一名教授,我教授的课程是心理学,在我们大学,教授的年薪不是很高,所以我打算跳槽去北京大学教乒乓球,乒乓球教授的工资比较高,每个月100元";
+
+console.log(longStr.indexOf("教授"));  //从左到右开始找
+console.log(longStr.lastIndexOf("教授")); //从右到左开始找  
+
+console.log("彭","彭".charCodeAt(0));
+console.log("周","周".charCodeAt(0));
+
+console.log("'1000'>200","1000">200); //=>隐式转换将他们变为数值比较
+console.log("'1000'>'200'","1000">"200");  //=>字符串比较,将以下标第0个进行unicode值比较
+
+console.log("substring(7,17)",longStr.substring(7,17));  //=>substring是一个下标截取方法,最后一个位置会被排除,而第一个位置却不会被排除
+console.log("substring()",longStr.substring());  //=>不填写参数就会直接默认从0到最后一位
+
+console.log("substring(17,-3)",longStr.substring(17,-3));  //=>substring自动识别负数为0,自动比较两个参数值的大小,相对小的值放在前面,相对大的值放在后面
+
+console.log("slice(17,-3)",longStr.slice(17,0));  //=> slice无法识别左右大小值的比较,依然在参数位置进行从左至右的查找
+
+console.log("slice(-5)",longStr.slice(-5));  //=> slice的负数,就从0的位置向左进行数数循环到结尾进行向左数数查找,月100元
+</script>	        
+</body>
+</html>

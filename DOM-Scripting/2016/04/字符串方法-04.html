@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title></title>
+</head>
+<body>
+<script>	
+	//alert("miaowei".charAt(2));
+	//alert("miaowei".charCodeAt(2));
+	//alert(String.fromCharCode(22937,21619));
+
+	//var str = "www.miaowei.com";
+	//alert(str.indexOf("m"));  //=> 第二个参数空缺,默认为0
+	//alert(str.indexOf("m",5));  //=>第二个参数为5,设置为从第5个位置开始查询
+	//alert(str.indexOf("x"));  //=>-1表示没有找到
+
+	var str = "我是一名教授,我教授的课程是心理学,在我们大学,教授的年薪不是很高,所以我打算跳槽去北京大学教乒乓球,乒乓球教授的工资比较高,每个月100元";
+	var s = "教授";
+	var i = 0;
+
+	for(;str.indexOf(s,i)!=-1;){
+		alert(str.indexOf(s,i));
+		i = str.indexOf(s,i)+s.length;
+	};
+
+
+</script>			
+</body>
+</html>

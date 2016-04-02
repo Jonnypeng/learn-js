@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+<input type="text" value="实施">
+<input type="button" value="检测">
+
+<script>
+var str = " miaowei";  //=>长度为8,因为空格也算一个长度
+console.log("字符串长度",str);//=>长度也是length-1	
+console.log(str.charAt()); //=>默认就是第0个,为一个空格
+console.log(str.charAt(4));  //=>为"o"
+
+console.log(str.charCodeAt(4)); //=>字符串元素中的unicode编码值111
+console.log(str.charCodeAt(5)); //=>字符串元素中的unicode编码值119
+
+console.log(String.fromCharCode(111,119)); //=>根据编码返回所对应的字符串元素,返回"ow"
+
+</script>		
+</body>
+</html>
