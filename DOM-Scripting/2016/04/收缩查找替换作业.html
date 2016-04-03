@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+body{
+		margin:30px;
+}	
+
+p {
+		width:70%;
+		display:inline-block;
+		border: 2px solid black;
+		padding: 5px;
+}
+ul {
+		width:15%;
+		text-align:center;
+		display:inline-block;
+		position: absolute;
+		margin-left:5px;
+		background: #eee;
+		padding: 10px;
+}
+li {
+		list-style:none;
+		padding: 5px 0px;
+}
+
+.hidden {
+		display:none;
+}
+
+span{
+		background-color:yellow;
+}
+
+</style>
+</head>
+<body>
+
+
+<p>
+离岛上没有大学，想继续读书，必须到大城市去。许多人从此无法重归离岛的寂寥生活，选择在城市安家。今年35岁的田场俊之就曾有过这样的经历。田场家在离岛上经营一座小酒厂，生产冲绳特有的泡盛酒。俊之在家排行老二，从没想过继承酒厂。大学毕业后，他留在冲绳首府那霸做了名房地产中介。 田场家的酒厂虽然不大，却是离岛岛民心里的宝贝。家里经营着口碑良好的酒厂，自己却在那霸过着白领平凡而庸碌的生活，两种生活之间的差异很大，但俊之也并没考虑过回家继承酒厂。直到25岁那年，父亲干活时从梯子上摔了下来，俊之赶回家探望。他看着爷爷和父亲年事已大，但仍在酒厂中辛劳的样子，心里突然放弃了久有的“不甘心”。“我突然明白，正是他们这样辛勤工作，我才能在外边上学。突然觉得，我应该也可以做这样的工作。”
+</p>
+
+<ul>
+		<li>展开</li>
+		<li class="hidden">查找</li>
+		<li class="hidden">替换</li>
+</ul>
+
+<div>
+		<input type="text" class="hidden">
+		<input type="button" value="" class="hidden">
+		<input type="text" class="hidden">
+</div>
+
+<script>
+var oP = document.getElementsByTagName("p")[0];
+var aUl = document.getElementsByTagName("ul")[0];
+var ali = aUl.getElementsByTagName("li");
+var oInp = document.getElementsByTagName("input");
+var onOff = true;
+var okNone = true;
+
+
+ali[0].onclick = function(){
+		if(onOff){
+				ali[0].innerHTML = "收缩"
+						ali[1].style.display = "block";
+				ali[2].style.display = "block";
+		}else{
+				ali[0].innerHTML = "展开"
+						ali[1].style.display = "none";
+				ali[2].style.display = "none";
+		};
+		onOff = !onOff;
+};
+
+ali[1].onclick = function(){
+		oInp[0].style.display = "inline-block";
+		oInp[1].style.display = "inline-block";
+		oInp[1].value = "查找";
+		oInp[2].style.display = "none";
+		okNone = true;
+
+};
+
+ali[2].onclick = function(){
+		oInp[0].style.display = "inline-block";
+		oInp[1].style.display = "inline-block";
+		oInp[1].value = "替换";
+		oInp[2].style.display = "inline-block";
+		okNone = false;
+
+};
+
+oInp[1].onclick = function (){
+		var str = "";
+		oP.innerHTML = oP.innerHTML.split("<span>");
+		oP.innerHTML = oP.innerHTML.split("</span>");
+		str = oInp[0].value;
+		strNew = oInp[2].value
+				if(okNone){
+						oP.innerHTML = oP.innerHTML.split(str).join("<span>" + str + "</span>");
+				}else{
+						oP.innerHTML = oP.innerHTML.split(str).join(strNew);
+				};
+};
+
+</script>
+</body>
+</html>

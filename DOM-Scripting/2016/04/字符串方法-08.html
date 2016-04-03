@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+	span{
+		background:yellow;
+	}
+</style>
+</head>
+<body>
+<input type="text">
+<input type="text">
+<input type="button" value="替换">
+
+<p>
+        离岛上没有大学，想继续读书，必须到大城市去。许多人从此无法重归离岛的寂寥生活，选择在城市安家。今年35岁的田场俊之就曾有过这样的经历。田场家在离岛上经营一座小酒厂，生产冲绳特有的泡盛酒。俊之在家排行老二，从没想过继承酒厂。大学毕业后，他留在冲绳首府那霸做了名房地产中介。 田场家的酒厂虽然不大，却是离岛岛民心里的宝贝。家里经营着口碑良好的酒厂，自己却在那霸过着白领平凡而庸碌的生活，两种生活之间的差异很大，但俊之也并没考虑过回家继承酒厂。直到25岁那年，父亲干活时从梯子上摔了下来，俊之赶回家探望。他看着爷爷和父亲年事已大，但仍在酒厂中辛劳的样子，心里突然放弃了久有的“不甘心”。“我突然明白，正是他们这样辛勤工作，我才能在外边上学。突然觉得，我应该也可以做这样的工作。”
+</p>
+
+<script>
+var aInp = document.getElementsByTagName("input");
+var oP = document.getElementsByTagName("p")[0];
+
+aInp[2].onclick = function(){
+	var str = aInp[0].value;
+	var newstr = aInp[1].value
+	if(!str) return;
+	oP.innerHTML = oP.innerHTML.split("<span>");
+	oP.innerHTML = oP.innerHTML.split("</span>");
+	oP.innerHTML = oP.innerHTML.split(str).join(newstr);
+}
+</script>
+</body>
+</html>

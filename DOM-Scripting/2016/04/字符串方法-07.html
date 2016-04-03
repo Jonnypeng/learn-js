@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+<script>
+var str = "www.MiaoWei.com";
+var str1i = "/www.miaowei.com/"
+console.log("str.toUpperCase()",str.toUpperCase());  //转化为大写
+console.log("str.toLowerCase()",str.toLowerCase());  //转化为小写
+
+console.log(str.split(".")); //将字符串以"."为截断,转为数组["www","MiaoWei","com"]
+console.log(str.split(".",2)); //将字符串以"."为截断,然后只选取前2位阶段作为数组元素,转为数组["www","MiaoWei"]
+
+var arr = str.split(".");
+console.log(arr.length,arr[0],arr[1],arr[2])
+console.log("str.split(),默认没有参数",str.split()); //["www.MiaoWei.com"]转换为一个只有一个元素的数组
+console.log("str.split('')以空格作为截断符",str.split(''));  //字符串被以空格为截断符全部剪开,然后变成了一个数组
+console.log(str1i.split("/")); //=>[,www.miaowei.com,],以前后字符作为截断符,字符中间会形成空字符
+</script>
+</body>
+</html>
