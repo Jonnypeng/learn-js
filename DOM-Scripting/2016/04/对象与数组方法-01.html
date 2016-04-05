@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+<script>
+var json4 = {name:"miaowei",age:3,fun:"前端开发"};
+for (var attr in json4){
+		console.log("对象遍历法",json4[attr]); // 按照常规模式,json后面的属性可以用".",但是attr是在var in 中,使用遍历过程必须是"[]"
+
+}
+
+var json5 = {url:["one","two","three","four","five"],text:["1","2","3","4","5"]};
+
+for(var i in json5){
+	for(var j=0;j<json5[i].length;j++){
+		console.log("对象嵌套数组的遍历法",json5[i][j]);
+	}
+}
+
+var arr1 = [{year:1991,day:1},{year:1992,day:2},{year:1993,day:3},{year:1994,day:4},{year:1995,day:5}]
+
+for(var i=0;i<arr1.length;i++){
+	for(var j in arr1[i]){
+		console.log("数组嵌套对象的遍历法",arr1[i][j]);
+	}
+}
+
+var arr =new Array();  // 建立一个新的空的数组
+var arr2 = new Array(3);
+console.log("参数3表明的是数组长度",arr2.length);
+
+var arr3 = new Array("4");
+console.log("参数'4'作为字符串,所以并没有改写长度,长度为1",arr3.length);
+
+var arr4 = [1,2,3,4,5]
+arr4.length = 0;
+console.log(arr4.length); //=>1 数组的长度是可以被赋值
+
+var str = "abcdefg";  //字符串的长度属性不能被赋值,所以str.length是不能被写的,需要转换为数组
+console.log(str.split(""));
+console.log(str.split("").join(""))
+console.log(str.split("",2).length)  //=>22,先转化为数组,然后再进行长度
+
+
+</script>	 
+</body>
+</html>

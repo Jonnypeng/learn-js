@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+<script>
+var arr = [1,2,3,4];
+arr.push(5); //向后塞入,返回值是新的长度
+arr.unshift(0);  //向前塞入,返回值是新的长度
+arr.pop(); //扔掉数组最后一个,返回值是扔掉的本身
+arr.shift(); //扔掉数组地一个,返回值是扔掉的本身
+
+
+var arr1 = ["TM","SM","YM","KM","QM"]
+//arr1.push(arr1.shift());  //将第一个放到最后一位
+//arr1.unshift(arr1.pop()); 	//将最后一个放到第一位
+
+//arr1.splice(0,2);  //从第0个位置开始,删除1个,返回值为删除的部分
+//arr1.splice(0,1,"UM"); //从第0个位置开始,删除1个,然后用"UM"替换返回值为删除的部分
+arr1.splice(1,0,"ZM");  //从第1个位置开始.删除0个,然后用"ZM"放在前面
+console.log(arr1);  
+
+var arr2 = [3,4,25,1,2,2,3,4,2]
+/*数组遍历去重复的方法,两个for循环,两个变量进行遍历比较去重*/
+for(var i =0;i<arr2.length;i++){
+	for(var j=i+1;j<arr2.length;j++){
+		if(arr2[i]==arr2[j]){
+			arr2.splice(j,1);
+			j--;
+		}
+	}
+}
+
+console.log(arr2);
+
+arr2.sort(); //按照字符串的地一个字符的编码进行顺序
+console.log(arr2);
+
+arr2.sort(function (a,b){
+	return a-b;  //从小到大进行排序
+});
+console.log(arr2);
+
+arr2.sort(function (a,b){
+	return b-a //从大到小进行排序
+});
+console.log(arr2);
+
+
+var arrWidth = ["43px","66px","11px","22px","33px","23px","78px"];
+
+arrWidth.sort(function (a,b){
+	return parseInt(a) - parseInt(b) 
+});
+
+console.log(arrWidth);
+
+
+var arr3 = [1,2,3,4,5,6,7];
+
+arr3.sort(function (a,b){
+	return Math.random() - 0.5;
+});
+
+console.log(arr3);
+
+
+</script>
+</body>
+</html>

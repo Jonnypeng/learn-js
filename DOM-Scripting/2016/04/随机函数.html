@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+<script>
+	console.log(Math.random());  //0~1 一个随机函数
+	console.log(Math.round(Math.random())); //0~1 一个随机函数,四舍五入的整数
+	console.log(Math.round(Math.random()*10)); //通过倍数,对1~10进行取整随机函数
+
+	/*5~10*/
+	console.log(Math.round(Math.random()*5 + 5));
+
+	/*10~20*/
+	console.log(Math.round(Math.random()*10 + 10));
+
+	/*20~100*/
+	console.log(Math.round(Math.random()*80 + 20));
+	
+	/*x~y*/
+	var x = 12;
+	var y = 22;
+	console.log(Math.round(Math.random()*(y-x)+x));
+
+	/*1~x*/
+	console.log(Math.ceil(Math.random()*x)); //ceil() 方法执行的是向上取整计算，它返回的是大于或等于函数参数，并且与之最接近的整数。
+
+
+
+
+</script>	 
+</body>
+</html>
