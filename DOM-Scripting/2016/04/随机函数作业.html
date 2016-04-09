@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title></title>
+<style>
+	p{
+		width:500px;	
+		word-wrap: break-word;
+		margin:30px auto;
+	}
+</style>
+</head>
+<body>
+       <script>
+	   	/*随机产生50个从0~1000之间不重复的函数*/	
+	   	/*indexOf('s')_为数组编写该方法:indexOf('img/1.jpg')*/	
+
+		var num = 0;
+		var arr100 = [];
+		var timer = setInterval(
+		function (){
+			arr100.push(Math.round(Math.random()*100));	
+				for(var i=0;i<arr100.length;i++){ 
+					for(var j=i+1;j<arr100.length;j++){
+						if(arr100[i]==arr100[j]){
+							arr100.splice(j,1)
+							j--;
+						}	
+					};
+				};
+			document.body.innerHTML = "<p>" + arr100 + "</p>";
+				if(arr100.length==50){
+					clearInterval(timer);
+				};
+			},10
+		);
+
+
+		function indexOf(){
+			for(var j=0;j<arr100.length;j++){
+				if(arr100[j]==10){ 
+					console.log(j);
+				};
+			};
+		};
+
+		indexOf();
+		
+		 </script>	 
+</body>
+</html>
