@@ -16,7 +16,7 @@
 	   	/*随机产生50个从0~1000之间不重复的函数*/	
 	   	/*indexOf('s')_为数组编写该方法:indexOf('img/1.jpg')*/	
 
-		var num = 0;
+		/*var num = 0;
 		var arr100 = [];
 		var timer = setInterval(
 		function (){
@@ -34,19 +34,20 @@
 					clearInterval(timer);
 				};
 			},10
-		);
+		); */
 
 
-		function indexOf(){
-			for(var j=0;j<arr100.length;j++){
-				if(arr100[j]==10){ 
-					console.log(j);
-				};
+		var arr2 = [1,2,3,4,5,6,7];
+		var sub = 0;
+		indexOf(5);
+
+		function indexOf(n){ 
+			for(var i=0;i<arr2.length;i++){ 
+			if(arr2[i]==n){ 
+				console.log(i);
+			};	
 			};
 		};
-
-		indexOf();
-		
 		 </script>	 
 </body>
 </html>
