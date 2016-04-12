@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title></title>
+</head>
+<body>
+       <input type="text">
+       <input type="button" value="提交">
+
+	   <div id="demo"></div>
+
+
+	   <script>
+	   		var oInp = document.getElementsByTagName("input");
+			var content = document.getElementById("demo");
+
+			oInp[1].onclick = function (){
+				var str = document.createElement("div")
+				var aStr = content.getElementsByTagName("div");
+				str.innerHTML = oInp[0].value + "&nbsp;&nbsp;<span>删除</span>";
+				if(aStr.length>0){ 
+				content.insertBefore(str,aStr[0]);	
+				}else{
+				content.appendChild(str);
+				};
+			var aSpan = content.getElementsByTagName("span");
+			for(var i=0;i<aSpan.length;i++){ 
+				aSpan[i].onclick = function (){ 
+					content.removeChild(this.parentNode);
+				};
+			};
+			};
+
+	   
+	   </script>
+       			 
+</body>
+</html>
