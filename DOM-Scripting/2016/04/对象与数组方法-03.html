@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title></title>
+</head>
+<body>
+       <script>
+	   		/*forEach();*/
+			var a = [1,2,3,4,5];
+			var b = [];
+			a.forEach(
+				function (value){ 
+					b.push(value*2);
+				}  //不能加;
+			);
+			console.log(b);  
+
+			/*map();*/
+			var d =a.map(
+				function (value){
+					return value*2;
+				}
+			);
+			console.log(d);
+
+			/*forEach与map都可以遍历传递函数,但是前者没有返回值,而后者则有*/
+
+
+			var e = a.filter(     //=>filter 通过函数判断生成一个符合条件的原数组的子集,
+				function (value){
+					return value < 3;
+				}
+			);
+			console.log(e);
+
+			/*every()与some()通过函数判断生成符合条件的布尔值,前者针对所有元素,后者针对部分元素*/
+			var arr1 = [12,1,2,44,6,8,9];
+			
+			console.log(arr1.every(    //=> 返回turn 因为所有元素都小于45
+				function (value){
+					return value < 45;
+				}
+			));
+
+			console.log(
+				arr1.every(   
+					function (value){
+						return value < 20;   //=>返回false 因为不是所有元素都小于20
+					}
+				)
+			);
+
+			console.log(
+				arr1.some(
+					function (value){ 
+						return value < 6;   //=>turn 因为部分元素小于6
+					}
+				)
+			);
+
+
+			console.log(
+				arr1.some(
+					function (value){
+						return value < 0;  //=>>false 部分元素不小于0
+					}
+				)
+			)
+
+			console.log(
+				arr1.reduce(
+					function (x,y){
+						return x+y;   
+					},3
+				)
+			)    //=>初始值为2,遍历求和
+
+			console.log(
+				arr1.reduce(
+				function(x,y){
+					return x>y?x:y
+					},100
+					)
+			);	 //=>初始值为100,求最大值为100
+
+			console.log(
+				arr1.reduceRight(
+					function(x,y){
+						return x-y;
+					},100	
+				)
+			);  //reduceRight 与 reduce 的用法一样,不同的是,reduceRight 的遍历顺序是从右到左
+
+			var arr3 = [1,2,3,4,5,8,7,8,9];
+			console.log(arr3.indexOf(2));
+			console.log(arr3.indexOf(8,6));  //=>从第6个开始进行搜索
+			console.log(arr3.lastIndexOf(8));
+
+			console.log(Array.isArray(arr3));  //=>检查对象是不是数组,返回布尔值
+			
+
+
+			var c = [2,3,6,1,5];
+			var d = [];
+
+			c.sort(
+				function (a,b){ 
+					return a-b;
+				}
+			);
+
+			console.log(c);
+	   </script>	 
+</body>
+</html>
