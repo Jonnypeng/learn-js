@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title></title>
+</head>
+<body>
+       <script>
+	   		var ob = {name:"jonny",age:17,work:"codeer",family:"3 person"}; 
+			console.log(ob.name);
+				for(var p in ob){
+					console.log(p + ":" + ob[p] + "\n"); 
+				}
+			
+		
+			//计算两个迪卡尔坐标(x1,y1)和(y1,y2)之间的距离
+			console.log(distance(2,2,3,3));
+			function distance(x1,y1,x2,y2){
+				var dx = x2 - x1;
+				var dy = y2 - y1;
+				return Math.sqrt(dx*dx+dy*dy);
+			};
+
+			//计算阶乘的递归函数(调用自身的函数)
+			//x!的值是从x到x递增(步长为1)的值的累乘
+			console.log(factorial(3));
+			function factorial(x){
+				if(x<=1)return 1;
+				return x*factorial(x-1);
+			}
+
+			//这个函数表达式定义了一个函数用来求传入从参数的平方
+			var square = function (x){
+				return x*x;
+			}; //函数表达式可以包含名称,这在递归时很有用
+
+			var f = function fact(x){
+				if(x <= 1)return 1;
+				else return x*fact(x-1);  //函数表达式可以作为参数传给其他函数
+			};
+				  //函数表达式有时定义后立即调用
+				var tensquared = (
+					function (x){
+						return x*x;
+					}(10));
+
+			/*嵌套函数*/
+			hypotenuse(3,4);   //计算勾股定理
+			function hypotenuse(a,b){
+				function square(x){
+					return x*x;
+				};
+				console.log(Math.sqrt(square(a)+square(b)));
+			}
+
+			/*函数调用*/
+			printprops({x:1});
+			var total = distance(0,0,2,1) + distance(2,1,3,5);
+			var probali
+	   </script>
+</body>
+</html>
