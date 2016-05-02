@@ -1,12 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <meta charset="UTF-8">
-        <title></title>
+<meta charset="UTF-8">
+<title></title>
 </head>
 <body>
-       <script>
-	   
-	   </script>	 
+<script>
+/*callee,用在arguments的属性,代指当前正在执行的函数*/	   
+function create(){
+		return function(n){
+				if(n <= 1)
+						return 1;
+				return n*arguments.callee(n-1);
+		};
+};
+
+var result = create()(5);
+console.log(result);   //=>120
+
+/*将对象属性用作实参*/
+function arraycopy(/*array*/from,/*index*/from_start,/*array*/to,/*index*/to_start,/*integer*/length){
+		//逻辑代码
+		for(var i in from){
+				to.push(from[i]);	
+		};
+};
+
+
+function easycopy(args){
+		arraycopy(
+						args.from,
+						args.from_start||0,
+						args.to,
+						args.to_start||0,
+						args.length
+				 );
+}; 
+
+var a = [1,2,3,4], b=[];
+easycopy({from:a,to:b,length:4});
+
+console.log(b);
+
+
+/*作为值的函数*/
+function square(x){
+	return x*x;
+};
+
+var s = square;
+console.log(s(4));
+/*函数作为对象的属性的值进行调用*/
+var o = {square:function(x){
+	return x+x;	
+}};
+var y = o.square(5);
+console.log(y);
+
+//函数甚至不需要名字,被赋值到数组中
+var a = [function (x){
+	return x+1*40
+},20];
+
+var arrZero = a[0](a[1]);
+console.log(arrZero);
+
+/*匿名函数,立即调用*/
+(function (){console.log("匿名函数立即被调用")}());
+
+/*闭包*/
+//闭包1
+function sfn3(){
+	var name = 120;
+	return 	function (){
+			return name;
+		}
+};
+
+var sfn3 = fn3();
+console.log(sfn3);
+//闭包2
+var b;
+function fn1(){
+	var ab = 100;
+	b =	function (){
+			return ab;
+		};
+};
+fn1();
+console.log(b());
+
+//闭包3
+function f(param){
+	var n = function(){
+		return param;
+	}
+	param++;
+	return n;
+};
+
+var test = f(456);
+console.log(test());
+
+//闭包4
+var h;
+function fn3(){
+	var a = "yes";
+	n = function (){
+		return a;
+	}
+};
+fn3();
+console.log(n());
+</script>	 
 </body>
 </html>		

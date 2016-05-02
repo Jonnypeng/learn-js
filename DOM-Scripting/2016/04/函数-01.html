@@ -1,62 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <meta charset="UTF-8">
-        <title></title>
+<meta charset="UTF-8">
+<title></title>
 </head>
 <body>
-       <script>
-	   		var ob = {name:"jonny",age:17,work:"codeer",family:"3 person"}; 
-			console.log(ob.name);
-				for(var p in ob){
-					console.log(p + ":" + ob[p] + "\n"); 
-				}
-			
-		
-			//计算两个迪卡尔坐标(x1,y1)和(y1,y2)之间的距离
-			console.log(distance(2,2,3,3));
-			function distance(x1,y1,x2,y2){
-				var dx = x2 - x1;
-				var dy = y2 - y1;
-				return Math.sqrt(dx*dx+dy*dy);
-			};
+<script>
+var ob = {name:"jonny",age:17,work:"codeer",family:"3 person"}; 
+console.log(ob.name);
+for(var p in ob){
+		console.log(p + ":" + ob[p] + "\n"); 
+}
 
-			//计算阶乘的递归函数(调用自身的函数)
-			//x!的值是从x到x递增(步长为1)的值的累乘
-			console.log(factorial(3));
-			function factorial(x){
-				if(x<=1)return 1;
-				return x*factorial(x-1);
-			}
 
-			//这个函数表达式定义了一个函数用来求传入从参数的平方
-			var square = function (x){
+//计算两个迪卡尔坐标(x1,y1)和(y1,y2)之间的距离
+console.log(distance(2,2,3,3));
+function distance(x1,y1,x2,y2){
+		var dx = x2 - x1;
+		var dy = y2 - y1;
+		return Math.sqrt(dx*dx+dy*dy);
+};
+
+//计算阶乘的递归函数(调用自身的函数)
+//x!的值是从x到x递增(步长为1)的值的累乘
+console.log(factorial(3));
+function factorial(x){
+		if(x<=1)return 1;
+		return x*factorial(x-1);
+}
+
+//这个函数表达式定义了一个函数用来求传入从参数的平方
+var square = function (x){
+		return x*x;
+}; //函数表达式可以包含名称,这在递归时很有用
+
+var f = function fact(x){
+		if(x <= 1)return 1;
+		else return x*fact(x-1);  //函数表达式可以作为参数传给其他函数
+};
+//函数表达式有时定义后立即调用
+var tensquared = (
+				function (x){
 				return x*x;
-			}; //函数表达式可以包含名称,这在递归时很有用
+				}(10));
 
-			var f = function fact(x){
-				if(x <= 1)return 1;
-				else return x*fact(x-1);  //函数表达式可以作为参数传给其他函数
-			};
-				  //函数表达式有时定义后立即调用
-				var tensquared = (
-					function (x){
-						return x*x;
-					}(10));
+/*嵌套函数*/
+hypotenuse(3,4);   //计算勾股定理
+function hypotenuse(a,b){
+		function square(x){
+				return x*x;
+		};
+		console.log(Math.sqrt(square(a)+square(b)));
+}
 
-			/*嵌套函数*/
-			hypotenuse(3,4);   //计算勾股定理
-			function hypotenuse(a,b){
-				function square(x){
-					return x*x;
-				};
-				console.log(Math.sqrt(square(a)+square(b)));
-			}
+/*函数调用*/
+var total = distance(0,0,2,1) + distance(2,1,3,5);
+var probability = factorial(5)/factorial(13);
+function distance(a,b,c,d){
+		return a+b+c+d;
+};
 
-			/*函数调用*/
-			printprops({x:1});
-			var total = distance(0,0,2,1) + distance(2,1,3,5);
-			var probali
-	   </script>
+function factorial(e){
+		return e*e; 
+};
+
+console.log(total);
+console.log(probability);
+
+
+/*方法调用*/
+var calculator = {
+operand1:1,
+		 operand2:1,
+		 add:function (){   //this指当前的对象
+				 this.result = this.operand1 + this.operand2;
+		 }
+};
+calculator.add();
+console.log(calculator.result);
+
+
+var sum = {
+num1:1,
+	 num2:2,
+	 num3:2,
+	 num4:2,
+	 num6:function (){
+			 this.result = this.num1 + this.num2 + this.num3; 
+	 }
+};
+sum.num6();
+console.log(sum.result);
+
+
+var o = {
+m:function (){
+		  var self = this;
+		  console.log(this===o);  //输出turn,说明this所指的对象就是o;
+		  f();
+		  function f(){
+				  console.log(this===o);  //this的值是全局对象,或者undefine
+				  console.log(self===o);
+		  }
+  }
+};
+
+o.m();
+
+/*间接调用*/
+
+var a = getPropertyName(o);
+getPropertyName(p,a);
+
+function getPropertyName(o,/*optional*/a){
+		//if(a===undefined)a=[]; //如果未定义,则创建一个新数组
+		a=a||[];
+		for (var property in o){
+				a.push(property);
+				return console.log(a);
+		}
+}
+
+fn(1,2,3);
+function fn(x,y,z){
+		if(arguments.length!=3){
+				throw new Error(
+								"function f called with" + arguments.length + "arguments,but it expects 3 arguments."
+							   )
+		}
+}
+
+function max(/*...*/){
+		var max = Number.NEGATIVE_INFINITY;  //遍历实参,查找并记住最大值,Number.NEGATIVE_INFINITY 是一个特殊值，表示负无穷大,它在算术运算或函数生成一个比 JavaScript 能表示的最小负数还小的数（也就是比 -Number.MAX_VALUE 还小的数）时返回。
+		for(var i=0;i<arguments.length;i++)
+				if(arguments[i]>max)
+						max=arguments[i];
+		return max;
+};
+
+var largest = max(1,10,100,2,3,1000,4,5,10000,6);
+console.log(largest);
+
+
+</script>
 </body>
 </html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+<script>
+/*function f1(){
+  var n =1;
+  test = function(){
+  n+=1;
+  }
+  function f2(){
+  alert(n);
+  return n;
+  }
+  return f2;
+  };  
+  var res = f1();
+  console.log(res());		
+  test();
+  console.log(res());
+
+
+  var setValue,getValue;
+  (function (){
+  var n =0;
+  getValue = function (){
+  return n;
+  };
+  setValue = function (x){
+  return n=x;
+  }
+  })();
+
+  console.log(getValue());
+  setValue(567);
+  console.log(getValue());
+
+
+  function test(x){
+  var i =0;
+  return function (){
+  return x[i++];
+  };
+  };
+  var next = test(["a","b","c","d"]);
+  console.log(next());
+  console.log(next());
+  console.log(next());
+  console.log(next());
+ */
+//function f(){
+//	var a = [];
+//	var i;
+//	for(i=0;i<3;i++){
+//		a[i]= (function (x){
+//			return function(){
+//				return x;
+//			}
+//		})(i);
+//		};
+//	return a;
+//};
+//var test = f();
+//console.log(test[0]());
+//console.log(test[1]());
+//console.log(test[2]());
+function f(){
+		function test(x){
+				return function(){
+						return x;
+				}
+		}
+		var a=[];
+		var i;
+		for(i=0;i<3;i++){
+				a[i]=test(i)
+		}
+		return a;
+};
+var res = f();
+console.log(res[0]());
+console.log(res[1]());
+console.log(res[2]());
+
+</script>	 
+</body>
+</html>
