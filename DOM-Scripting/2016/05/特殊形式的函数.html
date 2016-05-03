@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+<script>
+function a(param){
+		function b(param1){
+				return param1+10;
+		}
+		return b(param);
+};
+
+console.log(a(10));  //在a函数内调用b函数
+
+function b(param){
+		var c = function(param1){
+				return param1+10;
+		};
+		return c(param);
+};
+
+console.log(b(11));
+
+function c(){
+	alert("aaa");
+	return function (){
+		alert("bbb");
+	};
+};
+c()();
+
+//重写自己的函数
+function d(){
+	alert("aaa");
+	d = function (){
+		alert("bbb");
+	};
+};
+
+d();
+d();
+
+var a = function(){
+	function setUp(){
+		var setup = "doSomeThing";
+	}
+	function doWhat(){
+		alert("要执行的操作");
+	}
+	setUp();
+	return doWhat;
+}();
+a();
+
+
+</script>	 
+</body>
+</html>
