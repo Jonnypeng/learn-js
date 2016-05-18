@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+ </head>
+ <body>
+   <button id='chg'>change</button>
+   <iframe id='frame' src=''></iframe>
+   <script>
+     function $id(id){
+       return document.getElementById(id);
+     }
+     var btn=document.getElementById('chg');
+     var tip=true;
+     btn.onclick=function(){
+        alert('你居然在按钮没有被按下的时候就触发了！！！');
+     }
+
+     (function(){
+         var iList=document.getElementsByTagName('iframe');
+         for (var i=0;i<iList.length;++i)
+          {
+             iList[i].onload=function(){
+                
+               this.style.height=this.contentWindow.document.documentElement.scrollHeight+'px';
+             }
+          } 
+     }());
+   </script>
+ </body>
+</html>
+
