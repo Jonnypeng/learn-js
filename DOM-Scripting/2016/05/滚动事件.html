@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title></title>
+<style>
+	body{
+	height:2000px;
+}
+	#demo {
+	width:100px;
+	height:100px;
+	position:fixed;
+	bottom:15px;
+	right:15px;
+	background:red;
+}
+</style>
+</head>
+<body>
+       <div id="demo"></div>	 
+<script>
+	var demo = document.getElementById("demo");
+	window.onscroll = function (){
+	var st = document.documentElement.scrollTop || document.body.scrollTop;   //浏览器兼容性
+	if(st > 100){
+		demo.style.height = "600px";
+		demo.style.transition = "height 3s";
+}else{
+		demo.style.height = "100px";
+		demo.style.transition = "height 3s";
+};
+};
+</script>
+</body>
+</html>
