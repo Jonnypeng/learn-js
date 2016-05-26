@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+body{
+				height:1000px;
+}
+#textarea{
+				margin:15px 0px;
+}
+#test6 {
+				background:red;
+				width:200px;
+				height:200px;
+				position:fixed;
+				right:10px;
+				bottom:10px;
+}
+</style>
+
+<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js">
+</script>
+</head>
+<body>
+<p id="test" class="hide">单击鼠标隐藏内容</p>
+<button id="btn1">按钮</button>
+<p id="test2">双击鼠标隐藏内容</p>
+<button id="btn2">按钮</button>
+<p id="test3">鼠标移入隐藏内容,鼠标移除显示内容</p>
+<button id="btn3">按钮</button>
+<p id="test4">点击鼠标隐藏，松开鼠标显示</p>
+<button id="btn4">按钮</button>
+<p id="test5">悬浮事件中，依次改变段落中的文字</p>
+<button id="btn5">按钮</button>
+<div id="textarea">
+				<span>用户名:</span><input type="text"><br/>
+				<span>邮箱:</span> <input type="text">
+</div>
+<div id="test6">
+</div>
+
+<script>
+$(document).ready(function(){
+								$("#btn1").click(function(){
+												$("#test").hide();
+												});
+								$("#btn2").dblclick(function(){
+												$("#test2").hide();
+												$(this).hide();
+												});
+								$("#btn3").mouseenter(function(){
+												$("#test3").hide();
+												});
+								$("#btn3").mouseleave(function(){
+												$("#test3").show();
+												});		
+								$("#btn4").mousedown(function(){
+												$("#test4").hide();
+												});
+								$("#btn4").mouseup(function(){
+												$("#test4").show();
+												});
+								$("#btn5").hover(function(){
+												$("#test5").html("这是第一个显示的段落");
+												},function(){
+												$("#test5").html("这是第二个显示的段落");    //连续两个函数，可以制作鼠标移入与鼠标移出的动作
+												});
+								$("#textarea input").focus(function(){
+																$(this).css("background","gray");
+																});
+								$("#textarea input").blur(function(){
+																$(this).css("background","white");
+																});
+});
+</script>
+
+
+</div>
+</body>
+</html>
+
+
