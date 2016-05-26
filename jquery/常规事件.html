@@ -72,6 +72,14 @@ $(document).ready(function(){
 								$("#textarea input").blur(function(){
 																$(this).css("background","white");
 																});
+$(window).scroll(function(){
+var st = document.documentElement.scrollTop || document.body.scrollTop;
+	if(st>220){
+$("#test6").css("height","700px");
+}else{
+	$("#test6").css("height","200px");
+};
+});
 });
 </script>
 
