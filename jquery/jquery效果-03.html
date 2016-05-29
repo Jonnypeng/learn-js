@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+div{
+	background:red;
+	position:absolute;
+}
+	#test1{
+		width:100px;
+		height:100px;
+		left:10px;
+		top:50px;
+	}
+	#test2{
+			width: 100px;
+		left: 410px;
+	}
+	#test3{
+		height: 100px;
+		top: 450px;
+	}
+	#test4{
+		    width: 100px;
+			        top: 50px;
+	}
+		</style>
+	</head>
+	<div id="test1"></div>
+	<div id="test2"></div>
+	<div id="test3"></div>
+	<div id="test4"></div>
+	<button id="btn1">按钮</button>
+	<body>
+		<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>	
+		<script>
+$(document).ready(function(){
+	$("#btn1").click(function (){
+		fn1();
+		setTimeout(fn2,1000);
+		setTimeout(fn3,2000);
+		setTimeout(fn4,3000);
+	});
+	function fn1(){
+		$("#test1").animate({ 
+			width:'500px'
+		},1000);
+	};
+	function fn2(){
+		$("#test2").animate({ 
+		top: '50px',
+			height: '500px',
+		},1000);
+	};
+	function fn3(){
+		$("#test3").animate({
+			width:'500px',	
+		},1000);
+	};
+	function fn4(){
+		$("#test4").animate({
+			height:'500px'
+		},1000);
+	};
+});	
+		</script>
+	</body>
+</html>

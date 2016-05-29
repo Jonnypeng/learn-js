@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		#test1{
+			display:none;
+		}
+	</style>
+</head>
+<body>
+	<button id="btn1">向下滑动</button> <button id="btn2">向上收起</button> <button id="btn3">显示/收起</button>
+	<div id="test1">
+		<h2>
+			jQuery slideDown() 方法
+		</h2>
+		<p>
+		jQuery slideDown() 方法用于向下滑动元素。<br />
+			语法:<br />
+			$(selector).slideDown(speed,callback);<br />
+			可选的 speed 参数规定效果的时长。它可以取以下值："slow"、"fast" 或毫秒。<br />
+			可选的 callback 参数是滑动完成后所执行的函数名称。<br />
+		</p>
+		<h2>
+			jQuery slideUp()方法
+		</h2>
+		<p>
+		jQuery slideUp() 方法用于向上滑动元素。<br />
+		语法:<br />
+		$(selector).slideUp(speed,callback);<br />
+		可选的 speed 参数规定效果的时长。它可以取以下值："slow"、"fast" 或毫秒。<br />
+		可选的 callback 参数是滑动完成后所执行的函数名称。<br />
+		下面的例子演示了 slideUp() 方法：<br />
+		</p>
+	</div>
+<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>	
+<script>
+	$(document).ready(function(){
+		$("#btn1").click(function(){
+			$("#test1").slideDown("slow");
+		});
+		$("#btn2").click(function(){
+			$("#test1").slideUp("slow");
+		});
+		$("#btn3").click(function(){
+			$("#test1").slideToggle("slow");
+		});
+	});
+</script>
+</body>
+</html>

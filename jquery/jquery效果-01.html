@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		#test1 {
+		width:300px;
+		height:auto;
+		background:red;
+		color:white;
+		padding:15px;
+		}
+		#test3 div{
+		width:100px;
+		height:100px;
+		display:none;
+		}
+		#test4{
+		background:green;
+		padding:10px;
+		opacity:0.3;
+		}
+		#red{background:red;}
+		#green{background:green;}
+		#blue{background:blue;}
+	</style>
+</head>
+<body>
+	<div id="test1"><pre>
+	$(selector).hide(speed,callback); 
+	$(selector).show(speed,callback);
+	</pre>可选的 speed 参数规定隐藏/显示的速度，可以取以下值："slow"、"fast" 或毫秒。 <br/>可选的 callback 参数是隐藏或显示完成后所执行的函数名称。</div>
+	<button id="btn1">隐藏</button>
+	<button id="btn2">显示</button>
+	<div id="test2">
+		<h1>
+			jQuery toggle()
+		</h1>
+		<p>
+			通过 jQuery，您可以使用 toggle() 方法来切换 hide() 和 show() 方法。
+		</p>
+		<p>
+			显示被隐藏的元素，并隐藏已显示的元素：
+		</p>
+		<p>
+		可选的 speed 参数规定隐藏/显示的速度，可以取以下值："slow"、"fast" 或毫秒。<br />
+			可选的 callback 参数是 toggle() 方法完成后所执行的函数名称。
+		</p>
+	</div>
+	<button id="btn3">显示/隐藏</button>
+	<div id="test3">
+		<div id="red"></div>
+		<div id="green"></div>
+		<div id="blue"></div>
+	</div>
+	<button id="btn4">淡入</button>
+	<button id="btn5">淡出</button>
+	<button id="btn6">淡入/淡出</button>
+	<div id="test4">
+		<h2>
+			jQuery fadeTo() 方法
+		</h2>
+		<p>
+		jQuery fadeTo() 方法允许渐变为给定的不透明度（值介于 0 与 1 之间）。<br />
+			语法:<br />
+			<pre>
+				$(selector).fadeTo(speed,opacity,callback);
+			</pre>
+			必需的 speed 参数规定效果的时长。它可以取以下值："slow"、"fast" 或毫秒。<br />
+			fadeTo() 方法中必需的 opacity 参数将淡入淡出效果设置为给定的不透明度（值介于 0 与 1 之间）。<br />
+			可选的 callback 参数是该函数完成后所执行的函数名称。<br />
+			下面的例子演示了带有不同参数的 fadeTo() 方法：
+		</p>
+	</div>
+	<button id="btn7">指定透明度进行渐变</button>
+<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+<script>
+	$(document).ready(function (){
+		$("#btn1").click(function(){
+			$("#test1").hide("slow",function(){alert("这是一个很慢的速度")});
+		});
+		$("#btn2").click(function(){
+			$("#test1").show("fast",function(){alert("这是一个很快的速度")});
+		});
+		$("#btn3").click(function(){
+			$("#test2").toggle("slow");
+		});
+		$("#btn4").click(function(){
+			$("#red").fadeIn(1000);
+			$("#green").fadeIn(2000);
+			$("#blue").fadeIn(3000);
+		});
+		$("#btn5").click(function(){
+			$("#red").fadeOut(1000);
+			$("#green").fadeOut(2000);
+			$("#blue").fadeOut(3000);
+		});
+		$("#btn6").click(function(){
+			$("#red").fadeToggle(1000);
+			$("#green").fadeToggle(2000);
+			$("#blue").fadeToggle(3000);
+		});
+		$("#btn7").click(function(){
+			$("#test4").fadeTo("slow",0.7);
+		});
+	});
+</script>
+</body>
+</html>
