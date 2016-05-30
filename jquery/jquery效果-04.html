@@ -16,7 +16,8 @@
 </head>
 <body>
 <div id="test1"></div>
-<button id="btn1">按钮</button>
+<button id="btn1">开始</button>
+<button id="btn2">停止</button>
 <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>	
 <script>
 $(document).ready(function(){
@@ -25,6 +26,9 @@ $(document).ready(function(){
 		$("#test1").animate({width:'400px',height:'400px',opacity:'0.8'},1000);
 		$("#test1").animate({width:'400px',height:'100px',opacity:'0.5'},1000);
 		$("#test1").animate({width:'100px',height:'100px',opacity:'0.8'},1000);
+	});
+	$("#btn2").click(function(){
+		$("#test1").stop();	
 	});
 });
 </script>
