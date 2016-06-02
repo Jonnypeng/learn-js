@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+	<body>
+<div id="test1">
+	<h3>获得内容 - text()、html() 以及 val()</h3>	三个简单实用的用于 DOM 操作的 jQuery 方法：
+		<ul>
+			<li>
+				text() - 设置或返回所选元素的文本内容
+			</li>
+			<li>
+				html() - 设置或返回所选元素的内容（包括 HTML 标记）
+			</li>
+			<li>
+				val() - 设置或返回表单字段的值
+			</li>
+		</ul>
+</div>
+<input id="test2" type="text">
+<button id="btn1">text</button>
+<button id="btn2">html</button>
+<button id="btn3">val</button>
+
+<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>	
+<script>
+$(document).ready(function(){
+	$("#btn1").click(function(){
+		console.log($("#test1").text());
+	});
+	$("#btn2").click(function(){
+		console.log($("#test1").html());
+	});
+	$("#btn3").click(function(){
+		console.log($("#test2").val());
+	});
+});	
+</script>		
+</body>
+</html>			

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+<style>
+	#test1{
+		width:100px;
+		height:100px;
+		padding:10px;
+		border:1px solid black;
+		position:absolute;
+		background:red;
+		top:50px;
+		text-align:center;
+		line-height:100px;
+		color:white;
+	}
+</style>
+</head>
+<body>
+<div id="test1"></div>
+<button id="btn1">开始</button>
+<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"> </script>
+<script>
+	$(document).ready(function(){
+		$("#btn1").click(function(){
+			$("#test1").html("sony").css({top:'500px'},3000)
+			.slideUp("slow")
+			.slideDown("slow");
+		});
+	});
+</script>
+</body>
+</html>

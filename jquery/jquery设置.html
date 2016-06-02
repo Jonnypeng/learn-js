@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+<style>
+
+
+
+
+</style>
+</head>
+<body>
+<div id="test1">hello World</div>
+<input id="test2" type="text">
+<button id="btn1">text</button>
+<button id="btn2">html</button>
+<button id="btn3">value</button>
+<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"> </script>
+<script>
+$(document).ready(function(){
+	$("#btn1").click(function(){
+		$("#test1").text("您好！世界");
+	});
+	$("#btn2").click(function(){
+		$("#test1").html("<em>HELLO WORLD</em>");
+	});
+	$("#btn3").click(function(){
+		$("#test2").val("您好！太空");
+	});
+});
+
+</script>
+</body>
+</html>
