@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+<style>
+button{
+	padding:5px;
+}
+.active{
+	background:red;
+	color:yellow;
+}
+
+
+
+</style>
+</head>
+<body>
+	<button id="btn1">按钮A</button>
+	<button id="btn2" class="active col">按钮B</button>
+	<button id="btn3">按钮C</button>
+
+	<div id="btn-block">
+		<button>按钮</button>
+		<button>按钮</button>
+		<button>按钮</button>
+		<button>按钮</button>
+	</div>
+<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"> </script>
+<script>
+$(document).ready(function(){
+	$("#btn1").click(function(){
+		$(this).addClass("active");
+	});	
+	$("#btn2").click(function(){
+		$(this).removeClass("active");
+	});	
+	$("#btn3").click(function(){
+		$(this).toggleClass("active");
+	});	
+	$("#btn-block button").click(function(){
+		$("#btn-block button").removeClass("active");
+		$(this).addClass("active");
+	});
+});
+
+</script>
+</body>
+</html>
