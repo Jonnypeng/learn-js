@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+<style>
+
+
+
+
+</style>
+</head>
+<body>
+	<div id="test1">
+	<h2>
+		Hello World
+	</h2>
+	<h3>This is Jquery</h3>
+	</div>
+	<button id="btn1">结尾插入</button>
+	<button id="btn2">开头插入</button>
+	<button id="btn3">元素之后</button>
+	<button id="btn4">元素之前</button>
+	<br />
+	<button id="btn5">删除元素及子元素</button>
+	<button id="btn6">删除子元素</button>
+<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"> </script>
+<script>
+$(document).ready(function(){
+	$("#btn1").click(function(){
+		$("#test1 h2").append("<span style=\"color:red\">element append</span>");
+	});
+	$("#btn2").click(function(){
+		$("#test1 h2").prepend("<span style=\"color:green\">This is pre</span>");
+	});
+	$("#btn3").click(function(){
+		$("#test1 h3").after("<h3 style=\"color:gray\">nice to meet you</h3>");
+	});
+	$("#btn4").click(function(){
+		$("#test1 h3").before("<em style=\"color:blue\">How do you do</em>");
+	});
+	$("#btn5").click(function(){
+		$("#test1 h3").remove();
+	});
+	$("#btn6").click(function(){
+		$("#test1 h3").empty();
+	});
+});
+
+</script>
+</body>
+</html>
