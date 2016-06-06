@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link href="//cdn.bootcss.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" rel="stylesheet">
+<style>
+
+
+
+
+</style>
+</head>
+<body>
+<div class="container">
+				<div class="row">
+								<div class="col-md-4">
+												<h2>大光五金</h2>
+												<p>hello</p>
+												<span>yes</span>
+												<ul>
+												        <li>1</li>
+												        <li>2</li>
+												        <li>3</li>
+												</ul>
+								</div>
+				</div>
+</div>
+<button id="btn1">直接父级元素</button>
+<button id="btn2">所有父级元素</button>
+<button id="btn3">直接后代元素</button>
+<button id="btn4">find</button>
+<button id="btn5">siblings</button>
+<button id="btn6">next</button>
+<button id="btn7">nextAll</button>
+<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"> </script>
+<script>
+$(document).ready(function(){
+								$("#btn1").click(function(){
+								$("h2").parent().addClass("col-md-12");
+								});	
+								$("#btn2").click(function(){
+								$("h2").parents().css({"border":"1px solid red"});
+								});	
+								$("#btn3").click(function(){
+									$(".row").children().css({"border":"1px solid green"});		
+});
+					$("#btn4").click(function(){
+		$(".container").find("p").text("find() 方法返回被选元素的后代元素，一路向下直到最后一个后代。");
+});
+	$("#btn5").click(function(){
+		$("p").siblings().css({"color":"red"});	 //siblings() 方法返回被选元素的所有同胞元素
+});
+	$("#btn6").click(function(){
+		$("h2").next().css({"color":"green"});  //next() 方法返回被选元素的下一个同胞元素。
+});
+	$("#btn7"
+});
+
+</script>
+</body>
+</html>
