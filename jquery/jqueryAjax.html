@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+<link href="//cdn.bootcss.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" rel="stylesheet">
+<style>
+
+
+
+
+</style>
+</head>
+<body>
+<h3>jQery load()方法</h3>
+<p>jQuery load()方法从服务器中加载数据，并把返回的数据放入被选元素</p>
+<pre>
+$(selector).load(URL,data,callback);
+</pre>
+<div id="demo">大光五金</div>
+<button class="btn btn-primary" type="button">显示网址</button>		
+<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"> </script>
+<script>
+$(document).ready(function(){
+		$("button").click(function(){
+			$("#demo").load("ajax/demo.html #website",function(){
+		$("#demo").css({"font-size":"large","color":"red"},5000);
+});	
+});
+});
+</script>
+</body>
+</html>
