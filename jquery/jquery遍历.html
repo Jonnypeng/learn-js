@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link href="//cdn.bootcss.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" rel="stylesheet">
+<style>
+
+
+
+
+</style>
+</head>
+<body>
+<div class="container">
+				<div class="row">
+								<div class="col-md-4">
+												<h2 class="title">大光五金</h2>
+												<h2>DAG</h2>
+												<p>hello</p>
+												<span>yes</span>
+												<ul>
+												        <li>1</li>
+												        <li>2</li>
+												        <li>3</li>
+												</ul>
+								</div>
+				</div>
+</div>
+<button id="btn1">直接父级元素</button>
+<button id="btn2">所有父级元素</button>
+<button id="btn3">直接后代元素</button>
+<button id="btn4">find</button>
+<button id="btn5">siblings</button>
+<button id="btn6">next</button>
+<button id="btn7">nextAll</button>
+<button id="btn8">nextUntil</button>
+<button id="btn9">first</button>
+<button id="btn10">last</button>
+<button id="btn11">eq</button>
+<button id="btn12">filter</button>
+<button id="btn13">not</button>
+<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"> </script>
+<script>
+$(document).ready(function(){
+								$("#btn1").click(function(){
+								$("h2").parent().addClass("col-md-12");
+								});	
+								$("#btn2").click(function(){
+								$("h2").parents().css({"border":"1px solid red"});
+								});	
+								$("#btn3").click(function(){
+									$(".row").children().css({"border":"1px solid green"});		
+});
+					$("#btn4").click(function(){
+		$(".container").find("p").text("find() 方法返回被选元素的后代元素，一路向下直到最后一个后代。");
+});
+	$("#btn5").click(function(){
+		$("p").siblings().css({"color":"red"});	 //siblings() 方法返回被选元素的所有同胞元素
+});
+	$("#btn6").click(function(){
+		$("h2").next().css({"color":"green"});  //next() 方法返回被选元素的下一个同胞元素。
+});
+	$("#btn7").click(function(){
+		$("p").nextAll().css({"color":"blue"}); //nextAll() 方法返回被选元素的所有跟随的同胞元素。 
+});
+	$("#btn8").click(function(){
+		$("p").nextUntil("ul").css({"color":"yellow"}); //nextUntil() 方法返回介于两个给定参数之间的所有跟随的同胞元素。 
+});
+$("#btn9").click(function(){
+	$(".col-md-4 h2").first().css({"font-weight":"bold"});  //first() 方法返回被选元素的首个元素。
+});
+$("#btn10").click(function(){
+	$(".col-md-4 h2").last().css({"color":"red"});  //last() 方法返回被选元素的最后一个元素。
+});
+$("#btn11").click(function(){
+	$(".col-md-4 h2").eq(1).css({"color":"red"});  //eq() 方法返回被选元素中带有指定索引号的元素。索引号从 0 开始，因此首个元素的索引号是 0 而不是 1。下面的例子选取第二个 <p> 元素（索引号 1）：
+});
+$("#btn12").click(function(){
+	$(".col-md-4 h2").filter(".title").css({"color":"red"});  //filter() 方法允许您规定一个标准。不匹配这个标准的元素会被从集合中删除，匹配的元素会被返回。
+});
+$("#btn13").click(function(){
+	$(".col-md-4 h2").not(".title").css({"color":"red"});  //not() 方法返回不匹配标准的所有元素。
+});
+
+});
+
+</script>
+</body>
+</html>

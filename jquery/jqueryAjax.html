@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+<link href="//cdn.bootcss.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" rel="stylesheet">
+<style>
+
+
+
+
+</style>
+</head>
+<body>
+<h3>jQery load()方法</h3>
+<p>jQuery load()方法从服务器中加载数据，并把返回的数据放入被选元素</p>
+<pre>
+$(selector).load(URL,data,callback);
+</pre>
+<h3>
+        HTTP 请求：GET vs. POST
+</h3>
+<p>
+        两种在客户端和服务器端进行请求-响应的常用方法是：GET 和 POST。<br />
+        GET - 从指定的资源请求数据<br />
+POST - 向指定的资源提交要处理的数据<br />
+GET 基本上用于从服务器获得（取回）数据。注释：GET 方法可能返回缓存数据。<br />
+POST 也可用于从服务器获取数据。不过，POST 方法不会缓存数据，并且常用于连同请求一起发送数据。
+</p>
+<div id="demo">大光五金</div>
+<button id="btn1" class="btn btn-primary" type="button">load显示网址</button>		
+<button id="btn2" class="btn btn-primary" type="button">get显示网址</button>		
+<button id="btn3" class="btn btn-primary" type="button">post显示网址</button>		
+<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+		$("#btn1").click(function(){
+			$("#demo").load("ajax/demo.html #website",function(){
+		$("#demo").css({"font-size":"large","color":"red"},5000);
+});	
+});
+	$("#btn2").click(function(){
+	 $.get("ajax/demo.html",function(data){
+		alert(data);
+});
+});
+	$("#btn3").click(function(){
+	 $.post("ajax/demo.html",function(data){
+		alert(data);
+});
+});
+});
+</script>
+</body>
+</html>
