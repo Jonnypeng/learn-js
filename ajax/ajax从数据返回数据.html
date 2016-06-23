@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+<form action=""><select id="sel" name="customers">
+								<option value="APPLE">Apple Computer,Inc</option>
+								<option value="BAIDU">BAIDU.Inc</option>
+								<option value="Canon">Canon USA,Inc</option>
+								<option value="Google">Google,Inc</option>
+								<option value="Nokia">Nokia Corporation</option>
+								<option value="SONY">Sony Corporation of America</option>
+</select></form>			
+<br>
+<div id="txtHint">Customer info will be listed here...</div>		
+
+<script>
+var sel = document.getElementById("sel")	
+var url = "demo/getcustomer.php";
+var xmlhttp = new XMLHttpRequest();
+sel.onchange = function (){
+	xmlhttp.onreadystatechange = function (){
+	if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
+			document.getElementById("txtHint").innerHTML = xmlhttp.responseText;
+};	
+};	
+	xmlhttp.open("GET",url + "%3fq=" + sel.value,true);
+	xmlhttp.send();
+};
+</script>
+</body>
+</html>

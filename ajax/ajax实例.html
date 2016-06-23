@@ -1,21 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <meta charset="UTF-8">
-        <title>ajax实例</title>
+<meta charset="UTF-8">
+<title>ajax实例</title>
+<style>
+	table thead{
+	background:gray;
+	color:white;
+}
+	table tbody{
+	background:#eee;
+	color:black;
+}
+	table tr th{
+	text-align:center;
+}
+	th,td{
+	padding:10px;
+}
+</style>
 </head>
 <body>
-       <div id="myDiv">
-               <h3>let AJAX change this text</h3>
-       </div>	 
-	<button type="button" onclick="loadXMLDoc()">Change Content</button>
+<h4>
+				AJAX - onreadystatechange 事件
+</h4>
+<h5>
+				onreadystatechange 事件
+</h5>
+<p>
+当请求被发送到服务器时，我们需要执行一些基于响应的任务。每当 readyState 改变时，就会触发 onreadystatechange 事件。 readyState 属性存有 XMLHttpRequest 的状态信息。 下面是 XMLHttpRequest 对象的三个重要的属性：
+</p>
+<table>
+				<thead>
+								<tr>
+												<th>属性</th>
+												<th>描述</th>
+								</tr>
+				</thead>
+				<tbody>
+				        <tr>
+				                <td>onreadystatechange</td>
+				                <td>存储函数（或函数名），每当 readyState 属性改变时，就会调用该函数。</td>
+				        </tr>
+				        <tr>
+				                <td>readyState</td>
+				                <td>
+														<h6>存有 XMLHttpRequest 的状态。从 0 到 4 发生变化。</h6>
+<ul>
+        <li>0: 请求未初始化</li>
+        <li>1：服务器连接已经建立</li>
+        <li>2：请求已经接收</li>
+        <li>3：请求处理中</li>
+        <li>4：请求已完成，且响应已就绪</li>
+</ul>
+</td>
+				        </tr>
+				        <tr>
+				                <td>status</td>
+				                <td>200:完成<br>404:未找到</td>
+				        </tr>
+		<tr>
+		        <td>responseText</td>
+		        <td>以字符串方式返回数据</td>
+		</tr>
+		<tr>
+		        <td>responseXML</td>
+		        <td>以xml方式返回数据</td>
+		</tr>
+				</tbody>
+</table>
+<div id="myDiv">
+				<h3>let AJAX change this text</h3>
+</div>	 
+<button type="button">Change Content</button>
 <script>
-	function loadXMLDoc(){
-	var xmlhttp; 
-	xmlhttp = new XMLHTTPRequest;  // 创建一个XMLHTTPRequest对象, 用于后台与服务器交换数据
-	
-	
-}
+/*function loadXMLDoc(){
+				var url = "../ajax/demo/demo1.html?t=0.01";  // 将外部demo中的文件设置id
+				var xmlhttp; 
+				xmlhttp = new XMLHttpRequest;  // 创建一个XMLHTTPRequest对象, 用于后台与服务器交换数据
+				xmlhttp.onreadystatechange = function (){
+								if(xmlhttp.readyState == 4 && xmlhttp.status==200){
+												document.getElementById("myDiv").innerHTML = xmlhttp.responseText;
+								}
+				}
+				xmlhttp.open("GET",url,true); 
+				xmlhttp.send();
+}*/
+
+var btn = document.getElementsByTagName("button");
+btn[0].onclick = function fn1(){
+		var xmlhttp = new XMLHttpRequest();		
+		var url = "../ajax/demo/demo1.html?t=0.01";
+
+		xmlhttp.onreadystatechange = function (){
+	if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
+			document.getElementById("myDiv").innerHTML = xmlhttp.responseText;
+};
+};
+	xmlhttp.open("GET",url,true);
+	xmlhttp.send();		
+};
+
 </script>
 </body>
 </html>
