@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			// 输出o的每个属性与它的值
+			var o = {name:"jonny",age:"35",loaction:"Guiyang",interest:"Classical Music"};
+			fn1(o);
+			function fn1(o){
+				for(var i in o){
+					console.log("属性与值",i + ":" + o[i] + "\n");
+				};
+			};
+
+
+//计算两个笛卡尔坐标之间的距离
+	fn2(1,4,1,5);
+	function fn2(x1,x2,y1,y2){
+			var dx = x2 - x1;
+			var dy = y2 - y1;
+			console.log("笛卡尔坐标",Math.sqrt(dx*dx + dy*dy));
+	};
+
+	//定义一个函数用来求传入参数的平方，并将其赋给一个变量
+	var square = function fn3(x){
+		console.log("平方的值",x*x);
+	};
+	square(4);
+
+	//函数表达式作为参数传给其他函数，将数组的sort（）方法，利用内置的a-b进行比对排序
+	var data = [1,2,5,3,6,8,4,7];
+	data.sort(function(a,b){
+		return a-b;
+	});
+	console.log("比对排序的升序数组",data);
+
+
+	//函数表达式定义后，立即被调用,最后的5，是传入到自执行函数中的参数
+	var tensquared = (function (x){console.log("5*5",x*x);}(5));
+		</script>		
+	</body>
+</html>
