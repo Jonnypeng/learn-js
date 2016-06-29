@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+<script>
+	//嵌套函数的有趣之处在于作用域规则
+	hypotenuse(3,4);
+	function hypotenuse(a,b){
+		function square(x){
+			return x*x;
+		};
+			console.log(Math.sqrt(square(a) + square(b)));
+	};
+
+	//定义并调用一个函数来确定当前脚本运行时，是否为严格模式
+	var strict = (function (){console.log(!this)}());
+
+	//用this关键词指向对象
+	var str = {
+		x:3,
+		y:4,
+		add:function (){
+			return this.result = Math.sqrt(this.x*this.x + this.y*this.y);
+		}
+	};
+	str.add();  //先执行
+	console.log(str.result);
+</script>
+</body>
+</html>
