@@ -5,6 +5,64 @@
 	<title></title>
 </head>
 <body>
-	
+<script>
+	//先判断传入的实参与接收的形参是否相等
+
+	f(1,2,3);
+	//f(1,2,3,4);
+	function f(x,y,z){
+		if(arguments.length != 3){
+			throw new Error("您传入的实参数量与接收的形参数量不相符合");
+		}else{
+			console.log("实参的长度为" + arguments.length);	
+		}
+	};
+
+	//返回实参的最大值
+	function max(){   //不定实参的函数
+		var max = Number.NEGATIVE_INFINITY;  //Number.NEGATIVE_INFINITY 遍历实参，查找并记住最大值
+		for(var i=0;i<arguments.length;i++){
+			if(arguments[i] > max){
+				max = arguments[i];
+			};
+		}
+			return "实参的最大值为:" + max;
+	}
+
+	console.log(max(1,200,3,4,5));
+
+
+	//在数组中查询最大值
+	var Arr1 = [17,2,33,4,66,88,32435,765];
+	var max1 = Number.NEGATIVE_INFINITY;   //将数据初始化为负无穷大
+	for(var i in Arr1){
+		if(Arr1[i]>max1){
+			max1 = Arr1[i];
+		};
+	};
+
+	console.log("数组中的最大值为：", max1);
+
+
+	/*arguments 不是数组，而是以数字索引来指定的实参列表，可以通过索引值给指定的实参重新赋值*/
+	fn(2,4);
+	function fn(a,b){
+		arguments[0]=1;
+		arguments[1]=5;
+		console.log(arguments[0],arguments[1]);
+	};
+
+	/*callee 是 arguments 对象的属性。在该函数的函数体内，它可以指向当前正在执行的函数。注意：在给函数表达式一个名称或者使用函数声明而该函数必须调用自己时，禁止使用 arguments.callee()。以下是一个递归函数*/	
+	var fn1 = function (x){
+		if(x<1){
+			return 1;
+		};
+		return x*arguments.callee(x-1);
+	};
+	console.log(fn1(4));
+
+
+
+</script>		
 </body>
 </html>
