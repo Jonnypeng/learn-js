@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>HTML DOM Element</title>
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+	<h3>element.attribute</h3>
+	<h4>返回元素的属性</h4>
+	<button id="att" class="arr">“查看我有多少属性”</button>
+	<script>
+		$("#att").click(function (){
+			alert(this.attributes.length);
+		});
+	</script>
+	<h3>element.childNodes</h3>
+	<h4>返回节点的子节点集合</h4>
+	<div class="demo1"></div>
+	<script>
+			var nodes = document.body.childNodes;
+		for(var i in document.body.childNodes){
+			console.log(nodes[i]);
+		}
+	</script>
+
+</body>
+</html>
