@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<script>
+		var x = 5;
+		function fn(x){
+			return x*x;
+		};
+		console.log(fn(x));  //=>25
+		var fnx = fn;
+		console.log(fnx(x));  //=>25
+
+
+		var o = {sqrt:fn1};
+		var ou = o.sqrt;
+
+		function fn1(x,y){
+			return Math.sqrt(x*x + y*y);
+		};
+		console.log(ou(3,4)); //=>5
+
+		/*在数组中以索引指定特定的元素，对其进行函数声明与实参传递*/
+		var arr1 = [function (x){return x + 5},5];	
+		console.log(arr1[0](arr1[1]));  //10
+	</script>		
+</body>
+</html>
