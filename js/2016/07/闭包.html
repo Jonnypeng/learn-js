@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<script>
+		function addPrivateProperty(o,name,predicate){
+var value;//这是一个属性值
+//getter方法简单地将其返回
+o["get"+name]=function(){return value;};//setter方法首先检查值是否合法，若不合法就抛出异常
+//否则就将其存储起来
+o["set"+name]=function(v){
+if(predicate&&!predicate(v)) throw Error("set"+name+":invalid value"+v);
+else value=v;
+};
+}
+//下面的代码展示了addPrivateProperty()方法
+var o={};//设置一个空对象
+//增加属性存取器方法getName()和setName()
+//确保只允许字符串值
+addPrivateProperty(o,"Name",function(x){return typeof x=="string";});
+o.setName("Frank");//设置属性值
+console.log(o.getName());//得到属性值
+o.setName(0);//试图设置一个错误类型的值	
+	</script>		
+</body>
+</html>
