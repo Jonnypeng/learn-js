@@ -6,16 +6,23 @@
 </head>
 <body>
 <script>
-	var n = 10;
-	switch(n){
-	case 8:alert("8");
-	break;
-	case 9:alert("9");
-	break;
-	case 10:alert("10");
-	break;
-	default:alert("没有匹配");
+var a = 1;
+var b = "three";
+var c = (function (){
+			return 3;
+		})();
+fn(a);
+fn(b);
 
+function fn(n){
+	switch (n){
+		case 1:console.log("this is 1");
+	break;
+		case "three" :console.log("this is three");
+	break;
+		case 3 : console.log("this is 3");
+	break;
+	};
 };
 </script>
 </body>
