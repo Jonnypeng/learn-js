@@ -9,18 +9,22 @@
 var a = 1;
 var b = "three";
 var c = (function (){
-			return 3;
+			return 3+a;
 		})();
+var d = 10>3;
 fn(a);
 fn(b);
-
+fn(c);
+fn(d);
 function fn(n){
 	switch (n){
 		case 1:console.log("this is 1");
 	break;
 		case "three" :console.log("this is three");
 	break;
-		case 3 : console.log("this is 3");
+		case 4 : console.log("this is 4");
+	break;
+		case true : console.log("this is true");
 	break;
 	};
 };
