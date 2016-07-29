@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		h3{border:1px solid gray}
+	</style>
+</head>
+<body>
+	<button id="ok">ok</button>			
+	<script>
+	window.addEventListener("load",fn,false);
+	function fn(){
+		var btn = document.getElementById("ok");
+		var str = "<h3 id=\"ok1\">ok</h3>"
+			btn.addEventListener("click",function(){yesi1(str)},false);
+	};
+
+		function yesi1(str){
+		document.body.innerHTML = str;
+		var ok = document.getElementById("ok1");
+		ok.addEventListener("click",yes,false);
+		};
+
+		function yes(){
+			alert("ok");	
+		};
+		
+	</script>
+</body>
+</html>
