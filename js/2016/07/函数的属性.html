@@ -61,14 +61,27 @@ fn.apply(ar,[1,2,3]);
 //
 //g(2)//=＞3
 
-var or = {x:3};
+//var or = {x:3};
+//function fn(y){
+//	return this.x + y;
+//};
+//var gx = fn.bind(or);
+//console.log(gx(2));
 
-function fn(y){
-	return this.x + y;
-};
 
-var gx = fn.bind(or);
-console.log(gx(2));
+
+function fn(x,y,z){
+		this.x = 2;
+		return this.x+x+y+z;
+}; 
+
+var s = fn.bind({x:1},2,3);
+console.log(s(1));  //8
+
+
+
+
+
 
 
 </script>		
