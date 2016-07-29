@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+<script>
+/*length属性*/
+/*console.log(f(1,2,3,4));
+
+function f(x,y,z){
+	check(arguments);//检查实参个数和期望的实参个数是否一致
+	return x+y+z;//再执行函数的后续逻辑
+}
+
+//这个函数使用arguments.callee，因此它不能在严格模式下工作
+function check(args){
+	var actual=args.length;//实参的真实个数
+	var expected=args.callee.length;//期望的实参个数
+	if(actual!==expected)//如果不同则抛出异常
+		throw Error("Expected"+expected+"args;got"+actual);
+}*/
+
+//console.log(fn(1,2,3,4,5,6,7,8,89));
+
+function fn(x,y,z){
+	check(arguments);			//传入实参数
+	return x*y*z;
+};
+
+function check(args){			//将形参已这个局部变量进行代替
+	var ex = args.length;
+	var cEx = args.callee.length;
+	if(ex != cEx) throw Error("期望的参数长度为：" + cEx + "实际的参数长度为：" + ex);	
+};
+
+/*prototypr属性*/
+/*每一个函数都包含一个prototype属性，这个属性是指向一个对象的引用，这个对象称做“原型对象”（prototype object）。每一个函数都包含不同的原型对象。当将函数用做构造函数的时候，新创建的对象会从原型对象上继承属性。*/
+
+
+/*call方法 与 apply方法 */
+//将对象o中名为m()的方法替换为另一个方法
+//可以在调用原始的方法之前和之后记录日志消息
+
+/*var orr = {title:"1-1",name:"Jonny",type:"vip",price:50};
+var ar = ["one","two","three","four","five"];
+function fn(x,y,z){
+	console.log(x,y,z);
+};
+
+fn.call(orr,orr.title,orr.name,orr.type);
+fn.apply(ar,[1,2,3]);
+*/
+/*bind方法*/
+//function f(y){return this.x+y; }//这个是待绑定的函数
+//
+//var o={x:1};//将要绑定的对象
+//
+//var g = f.bind(o);//通过调用g(x)来调用o.f(x)
+//
+//g(2)//=＞3
+
+var or = {x:3};
+
+function fn(y){
+	return this.x + y;
+};
+
+var gx = fn.bind(or);
+console.log(gx(2));
+
+
+</script>		
+</body>
+</html>
