@@ -99,13 +99,20 @@ var module = {
 			x:21,
 			fo:function (){return this.x}
 		} 
-
 		console.log(mo.fo());
-
 		var ho = mo.fo;
 		console.log(ho());  
-
 		console.log(ho.bind(mo)());
+
+		var a = "global";
+		var s = function (b,c){
+			var a = "local";
+			return new Function(b,c,"return a + 1 + 2");
+		};
+
+		console.log(s()(1,2));  //global
+
+
 
 
 
