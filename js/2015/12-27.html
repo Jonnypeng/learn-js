@@ -3,17 +3,16 @@
 <head>
         <meta charset="UTF-8">
         <title></title>
-				<link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
 <style>
 </style>
 </head>
 <body>
 
-	<button>button</button>
-	<button>button</button>
-	<button>button</button>
-	<button>button</button>
-	<button>button</button>
+	<button	class="one two">button</button>
+	<button	class="one two">button</button>
+	<button	class="one two">button</button>
+	<button	class="one two">button</button>
+	<button	class="one two">button</button>
 	<button>button</button>
 	<button>button</button>
 	<button>button</button>
@@ -22,18 +21,30 @@
 	<script>
 	var btn = document.getElementsByTagName("button");
 
-	for(var i=0;i<btn.length;i++){
-		btn[i].onOff = true;
-			btn[i].onclick = function(){
-				if(this.onOff){
-					this.innerHTML = "red";
-					this.onOff = false;
-				}else{
-					this.innerHTML = "white";
-					this.onOff = true;
-				}
-			}
+	var three = document.getElementsByClassName("three");
+
+	btn[0].onclick = function (){
+		this.setAttribute("class","one two three");
+if(three.length>0){
+		//console.log("s");	
+		console.log(three[0]);
+		three[0].setAttribute("class","th");
 	}
+	};
+	
+
+	//for(var i=0;i<btn.length;i++){
+	//	btn[i].onOff = true;
+	//		btn[i].onclick = function(){
+	//			if(this.onOff){
+	//				this.innerHTML = "red";
+	//				this.onOff = false;
+	//			}else{
+	//				this.innerHTML = "white";
+	//				this.onOff = true;
+	//			}
+	//		}
+	//}
 	</script>
 </body>
 </html>

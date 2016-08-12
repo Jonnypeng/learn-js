@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		.btn{
+			background:gray;
+			color:white;
+			padding:5px;
+		}
+		.active{
+			background:red;
+			color:white;
+		}
+	</style>
+</head>
+<body>	
+	<button class="btn">按钮</button>
+	<button class="btn">按钮</button>
+	<button class="btn">按钮</button>
+	<button class="btn">按钮</button>
+	<button class="btn">按钮</button>		
+	<script>
+		var btn = document.getElementsByTagName("button");
+		var active = document.getElementsByClassName("active");
+
+		//btn.forEach(function(e){
+		//		e.onclick = function(){
+		//			this.setAttribute("class","btn active");
+		//		};
+		//		});
+
+		for(var i in btn){
+			btn[i].onclick = function(){
+					if(active.length>0){
+						active[0].setAttribute("class","btn");
+					};
+					this.setAttribute("class","btn active");
+			};	
+		};
+	</script>
+</body>
+</html>
