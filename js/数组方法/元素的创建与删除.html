@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+<script>
+	var a = [1,2,3,4,5,6,7,8,9];
+	a.push(10,11,12);  //尾部添加元素
+	a.unshift(-1,0);  //首部添加元素
+	delete a[4];  //删除数组的特定元素，保持数组长度，保持数组索引位置
+	document.body.innerHTML += a;
+	alert('old length:' + a.length);
+	a.length = 13;  //通过指定数组长度就可以简单地删除数组尾部的元素
+	alert('new length:'+ a.length + 'a:' + a);
+	alert(a.pop() + a); //pop()方法是删除并返回数组的最后一个元素 
+	alert(a.shift() + a);  //shift()方法是删除并返回数组的第一个元素
+	alert(a.splice(2,5,'replace1','replace2','replace3','replace4'));  //splice() //是一个通用的方法来插入、删除、修改数组元素的方法,从索引2开始，删除5个元素,返回删除元素所组成的新数组
+	alert(a); //同上
+</script>		
+</body>
+</html>
