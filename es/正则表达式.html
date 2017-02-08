@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<div id="demo">this is test</div>
+	<script>
+		var demo = document.getElementById("demo");
+		var word = "21 2canvas isi webapi";
+		var num = "th2344";
+
+		var a = word.search(/canvas/);
+		var b = word.search(/i$/g);
+		var c = word.search(/vw|is/);
+		var d = word.search(/[ni]/);
+		var e = word.search(/[^2c]/);
+		var f = word.search(/\w/);
+		console.log(a,b,c,d,e,f);
+
+		var a1 = word.match(/[a]/g);
+		var b1 = word.match(/ca|is|pi/g);
+		var c1 = demo.innerHTML.match(/is/g);
+		console.log(a1,b1);
+
+		var a2 = word.replace(/s/g,"st");  //返回一个全新的已经被替换了的字符串
+		console.log(c1);  
+
+	</script>		
+</body>
+</html>
