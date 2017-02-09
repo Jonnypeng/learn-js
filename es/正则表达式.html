@@ -8,7 +8,8 @@
 	<div id="demo">this is test</div>
 	<script>
 		var demo = document.getElementById("demo");
-		var word = "21 2canvas isi webapi";
+		var word = "is 2 222canvas issi we2bapi";
+		var str = "aaab";
 		var num = "th2344";
 
 		var a = word.search(/canvas/);
@@ -17,16 +18,29 @@
 		var d = word.search(/[ni]/);
 		var e = word.search(/[^2c]/);
 		var f = word.search(/\w/);
-		console.log(a,b,c,d,e,f);
+		var g = word.search(/2{2}/);
+		var h = word.search(/\s/);
+		var i = word.search(/\d\d/);
+		console.log(a,b,c,d,e,f,g,h,i);
 
 		var a1 = word.match(/[a]/g);
 		var b1 = word.match(/ca|is|pi/g);
 		var c1 = demo.innerHTML.match(/is/g);
-		console.log(a1,b1);
+		var d1 = word.match(/2{2}/g);
+		var d2 = word.match(/2+/g);
+		var d3 = word.match(/2?/g);
+		var d4 = word.match(/2*/g);
+		var d5 = word.match(/2{1,2}/g);
+		var d6 = word.match(/2{1,}/g);
+		var d7 = word.match(/a+?/g);
+		var d8 = word.match(/2|canvas|is/g);
+		var d9 = word.match(/(2|s)+|pi/g);
+		console.log(a1,b1,c1,d1,d2,d3,d4,d5,d6,d7,d8,d9);
+
 
 		var a2 = word.replace(/s/g,"st");  //返回一个全新的已经被替换了的字符串
-		console.log(c1);  
+		console.log(c1);
 
-	</script>		
+	</script>
 </body>
 </html>
