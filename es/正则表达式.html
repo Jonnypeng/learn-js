@@ -37,9 +37,12 @@
 		var d9 = word.match(/(2|s)+|pi/g);
 		console.log(a1,b1,c1,d1,d2,d3,d4,d5,d6,d7,d8,d9);
 
-
 		var a2 = word.replace(/s/g,"st");  //返回一个全新的已经被替换了的字符串
 		console.log(c1);
+
+		var str1 = "this is hello Hello hellook okhello";
+		var patt = new RegExp("hello","gi");
+		var pass = patt.exec(str1);
 
 	</script>
 </body>

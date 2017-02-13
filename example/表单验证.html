@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  input[type="text"]{
+    -webkit-appearance:none;
+    border:1px solid gray;
+    background:#eee;
+  }
+  </style>
+</head>
+<body>
+  <input type="text" placeholder="您只能输入数字" id="data" /><br/>
+  <input type="text" id="demo" placeholder="请输入密码" /><br/>
+  <input id="commit" type="submit" value="commit" />
+  <script>
+  var str = "aZ";
+  var demo = document.getElementById("demo");
+  var dataIn = document.getElementById("data");
+  var commit = document.getElementById("commit");
+
+  dataIn.onkeyup = function (){
+    var input = /\D/;
+    var output = "";
+    this.value = this.value.replace(input,output);
+  };
+
+  commit.onclick=function (){
+    var AZpass = /[A-Z]/.test(demo.value);
+    var azpass = /[a-z]/.test(demo.value);
+    var dpass = /\d/.test(demo.value);
+    var wordpass = /[^\w]/.test(demo.value);
+    var spacepass = /\s/.test(demo.value);
+    var lengthpass = /^\w{6,10}$/.test(demo.value);  //字符在6至10之间
+    var pass = AZpass && azpass && dpass && (!wordpass) && (!spacepass) && lengthpass;
+    console.log(lengthpass);
+    if(!pass){
+      console.log("The infomation you entered is not compliant");
+    }else{
+      console.log("The infomation you entered is validated successfully");
+    };
+  };
+  </script>
+</body>
+</html>

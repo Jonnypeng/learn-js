@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+<div id="demo"></div>
+		<script>
+			var str = "The rain in Spain stays mainly in the plain";
+			var patt1 = new RegExp("ain", "g");
+
+			for(i = 0; i < 4; i++) 
+			{
+				patt1.test(str)
+				document.write("ain found. index now at: " + patt1.lastIndex);
+				document.write("<br />");
+			}
+
+			var demo = document.getElementById("demo");
+			var str1 = "This hello inshello stay inHello hello";
+			var patt2 = new RegExp("h","g");
+			for(var j = 0 ;j<4;j++){
+				if(patt2.test(str1)){
+				document.write("第" + patt2.lastIndex + "位是" + patt2.exec(str1));
+				document.write("<br/>");
+				};
+			}
+
+		</script>		
+	</body>
+</html>
