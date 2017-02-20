@@ -15,6 +15,7 @@
 </head>
 <body>
   <input type="text" placeholder="您只能输入数字" id="data" /><br/>
+  <input type="text" placehodle="输入网址" id="httpUrl">
   <input type="text" id="demo" placeholder="请输入密码" /><br/>
   <input id="commit" type="submit" value="commit" />
   <script>
@@ -22,11 +23,18 @@
   var demo = document.getElementById("demo");
   var dataIn = document.getElementById("data");
   var commit = document.getElementById("commit");
+  var httpUrl = document.getElementById("httpUrl");
 
   dataIn.onkeyup = function (){
     var input = /\D/;
     var output = "";
     this.value = this.value.replace(input,output);
+  };
+
+  httpUrl.onkeyup = function (){
+    var input = /\/?(?:\?.*)?$/g;
+    var output = '';
+    console.log(this.value.match(input));
   };
 
   commit.onclick=function (){
