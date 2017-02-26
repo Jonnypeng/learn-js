@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body{
+      margin:0px;
+    }
+    #bg{
+      position:absolute;
+      top:0px;
+      left:0px;
+      width:100%;
+      height:100%;
+      background:url(bg.jpg) no-repeat center center;
+      background-size:100% 100%;
+    }
+    #cube{
+      position:absolute;
+      top:-webkit-calc((100% - 200px) / 2);
+      left:-webkit-calc((100% - 200px) / 2);
+      width:200px;
+      height:200px;
+      -webkit-transform-style:preserve-3d;
+      -webkit-transform-origin:center center;
+      perspective-origin:50% 50%;
+    }
+    #cube div{
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    left: 25px;
+    top: 25px;
+    background-size:100% 100%;
+    opacity:0.8;
+    }
+    #front{
+      background:url('https://img3.doubanio.com/lpic/s1669203.jpg') no-repeat center center;
+      -webkit-transform:rotateY(0deg);
+    }
+    #left{
+      background:url('https://img3.doubanio.com/lpic/s29157791.jpg') no-repeat center center;
+      -webkit-transform:rotateY(90deg);
+      -webkit-transform-origin:left center;
+    }
+    #right{
+      background:url('https://img3.doubanio.com/lpic/s1887325.jpg') no-repeat center center;
+      -webkit-transform:rotateY(-90deg);
+      -webkit-transform-origin:right center;
+    }
+    #back{
+      background:url('https://img1.doubanio.com/lpic/s6980788.jpg') no-repeat center center;
+      -webkit-transform:translateZ(-150px);
+      -webkit-transform-origin:center center;
+    }
+    #top{
+      background:url('https://img1.doubanio.com/lpic/s27449927.jpg') no-repeat center center;
+      -webkit-transform:rotateX(-90deg);
+      -webkit-transform-origin:top center;
+    }
+    #bottom{
+      background:url('https://img1.doubanio.com/lpic/s4621058.jpg') no-repeat center center;
+      -webkit-transform:rotateX(90deg);
+      -webkit-transform-origin:bottom center;
+    }
+  </style>
+</head>
+<body>
+  <div id="bg">
+    <div id="cube">
+      <div id="front"></div>
+      <div id="left"></div>
+      <div id="right"></div>
+      <div id="top"></div>
+      <div id="bottom"></div>
+      <div id="back"></div>
+    </div>
+  </div>
+  <script>
+    var cube = document.getElementById('cube');
+    var cubeStyle = {};
+
+    window.addEventListener('deviceorientation',function (event){
+      cubeStyle.alpha = Math.round(event.alpha);
+      cubeStyle.beta = Math.round(event.beta - 50);
+      cubeStyle.gamma = Math.round(event.gamma);
+      cubeStyle.info = 'rotateX(' + cubeStyle.beta + 'deg) ' + 'rotateY(' + cubeStyle.gamma + 'deg) ' + 'rotateZ(' + cubeStyle.alpha + 'deg)';
+      console.log(cubeStyle.info);
+      cube.style.webkitTransform = cubeStyle.info;
+    },false);
+
+
+  </script>
+</body>
+</html>
